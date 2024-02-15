@@ -1,6 +1,7 @@
-import './App.css'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import Home from './pages/Home/Home';
+import Post from './pages/Post/Post';
 
 function App() {
 
@@ -23,14 +24,14 @@ function App() {
           * @author Đào Duy Thái
           * @date 14/02/2024
           */}
-          <Route path="/" element={<h1>Home</h1>} />
+          <Route path="/" element={<Home />} />
           
           {/*
           * @des view post details of a social network
           * @author Đào Duy Thái
           * @date 14/02/2024
           */}
-          <Route path="/post" element={<h1>Post</h1>} />
+          <Route path="/post" element={<Post />} />
 
           <Route path="/search" element={<h1>Search</h1>} />
 
