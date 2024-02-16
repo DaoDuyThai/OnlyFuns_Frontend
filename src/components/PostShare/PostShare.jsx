@@ -48,10 +48,11 @@ const PostShare = () => {
                         Shedule
                     </div>
                     <button
-                        className="button ps-button"
+                        className="btn btn-primary ps-button"
                     // onClick={handleUpload}
                     // disabled={loading}
-                    >
+                    ><span style={{ fontWeight:"bold" }}>Share</span>
+                        
                         {/* {loading ? "uploading" : "Share"} */}
                     </button>
 
