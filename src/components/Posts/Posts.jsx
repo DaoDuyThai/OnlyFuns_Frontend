@@ -9,6 +9,8 @@ const Posts = () => {
         <div className="Posts">
             <Post />
             <Post />
+            <Post />
+            <Post />
             {/* {loading
                 ? "Fetching posts...."
                 : posts.map((post, id) => {

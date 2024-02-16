@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import './Header.css';
 
 const Header = () => {
     const [isCollapsed, setIsCollapsed] = useState(true);
@@ -8,7 +9,7 @@ const Header = () => {
         setIsCollapsed(!isCollapsed);
     };
     return (
-        <>
+        <div className='Header'>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/">
@@ -25,7 +26,17 @@ const Header = () => {
 
                     <div className={`collapse navbar-collapse ${isCollapsed ? '' : 'show'}`} id="navbarSupportedContent">
                         <form className="d-flex input-group w-auto ms-lg-3 my-3 my-lg-0">
-                            <input type="search" className="form-control" placeholder="Search" aria-label="Search" />
+                            <input 
+                            type="search" 
+                            className="form-control" 
+                            placeholder="Search" 
+                            aria-label="Search" 
+                            style={{ backgroundColor: "white",
+                                borderRadius: "10px",
+                                padding: "10px",
+                                fontSize: "17px",
+                                border: "none",
+                                outline: "none" }}/>
                             <button className="btn btn-primary" type="button" data-mdb-ripple-color="dark">
                                 <div>
                                     <i className="fas fa-search fa-lg mb-1"></i>
@@ -78,7 +89,7 @@ const Header = () => {
                     </div>
                 </div>
             </nav >
-        </>
+        </div>
     );
 };
 
