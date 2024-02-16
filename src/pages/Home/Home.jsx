@@ -7,11 +7,14 @@ const Home = () => {
     return (
         <>
             <Header />
-            <div className="Home">
-                <RightSide />
-                <PostSide />
-                <LeftSide />
+            <div className="container-fluid">
+                <div className="Home">
+                    <RightSide />
+                    <PostSide />
+                    <LeftSide />
+                </div>
             </div>
+
         </>
     );
 };
