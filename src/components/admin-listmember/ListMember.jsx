@@ -1,5 +1,5 @@
 import UserCard from './UserCard.jsx';
-import '../../style/admin-listMember/ListMember.css';
+import '../../style/admin-listmember/ListMember.css';
 
 function ListMember() {
     return (

@@ -1,0 +1,44 @@
+.reported-post{
+    box-shadow: 0 0 1px 1px rgba(0,0,0,0.1);
+    padding:20px;
+    border-radius: 10px;
+}
+.action {
+    display: flex;
+    justify-content: space-between;
+}
+
+.action button {
+    width: 100%;
+    height: 36px;
+    border: none;
+}
+
+.keep-btn {
+    background-color: #0866ff;
+    color: #f0f2f5;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+.keep-btn:hover {
+    background-color: #0449af;
+}
+
+.keep-btn:active {
+    background-color: #012c70;
+}
+
+.rmv-btn {
+    background-color: #e4e6eb;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+.rmv-btn:hover {
+    background-color: #c7c7c7;
+}
+
+.rmv-btn:active {
+    background-color: #6c6c6c;
+}

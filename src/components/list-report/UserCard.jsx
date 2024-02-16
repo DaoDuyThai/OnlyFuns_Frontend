@@ -1,9 +1,9 @@
-import '../../style/admin-listMember/user-card.css';
+import '../../style/list-report/UserCard.css';
 
 function UserCard() {
     return (
         <div>
-            <div className="user-card mx-4 my-2">
+            <div className="user-card">
                 <div className="d-flex">
                     <img
                         className="me-2"
@@ -14,15 +14,10 @@ function UserCard() {
                         <div className="user-name">
                             <a href="#"><strong>Dương Thiện Phước</strong></a>
                         </div>
-                        <div className="user-address">
-                            <p>Hà Nội,Việt Nam</p>
+                        <div className="time">
+                            <p>June-25</p>
                         </div>
                     </div>
-                </div>
-                <div className="act-btn">
-                    <button className="btn-action">
-                        Add friend
-                    </button>
                 </div>
             </div>
         </div>

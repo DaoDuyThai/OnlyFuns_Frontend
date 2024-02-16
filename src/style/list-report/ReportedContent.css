@@ -1,0 +1,8 @@
+.report-header {
+    height: 129px;
+    box-shadow: 0 2px 1px 1px rgba(0,0,0,0.1);
+    padding: 10px;
+}
+.report-header h3{
+    font-weight: bold;
+}

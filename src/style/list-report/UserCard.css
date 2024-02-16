@@ -1,0 +1,28 @@
+.user-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-card img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+}
+
+.user-name {
+    font-size: 13px;
+}
+
+.user-name a {
+    text-decoration: none;
+    color: black;
+}
+
+.user-name a :hover {
+    text-decoration: underline;
+}
+
+.time {
+    font-size: small;
+}
