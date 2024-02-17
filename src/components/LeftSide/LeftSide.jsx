@@ -1,4 +1,5 @@
 import './LeftSide.css';
+import { Link } from "react-router-dom";
 const LeftSide = () => {
 
     return (
@@ -52,6 +53,16 @@ const LeftSide = () => {
                     </span>
                 )} */}
                 </div>
+                <span>
+                    <center>
+                        <button className='btn btn-primary'>
+                            <Link to="/profile" style={{ textDecoration: "none", color: "inherit" }}>
+                                My Profile
+                            </Link>
+                        </button>
+                    </center>
+
+                </span>
             </div>
         </div>
     )

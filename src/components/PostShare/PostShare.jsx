@@ -16,7 +16,7 @@ const PostShare = () => {
     return (
         <div className="PostShare">
             <img
-                src="https://www.w3schools.com/w3images/avatar1.png" className="avatar" alt="BackgroundPicture"
+                src="https://www.w3schools.com/w3images/avatar1.png" className="" alt="BackgroundPicture"
             />
             <div>
                 <input
