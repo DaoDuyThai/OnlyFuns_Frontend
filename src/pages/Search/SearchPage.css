@@ -1,0 +1,176 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar.close {
+    transform: translateX(-280px);
+}
+
+.sidebar header {
+    padding: 20px;
+    border-bottom: 1px solid #555;
+}
+
+
+.image-text {
+    display: flex;
+    align-items: center;
+}
+
+.image {
+    margin-right: 10px;
+}
+
+.image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.sub {
+    font-size: 14px;
+}
+
+.toggle {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu-bar {
+    padding: 20px;
+}
+
+.menu-links {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-links li {
+    margin-bottom: 20px;
+}
+
+.icons {
+    margin-right: 10px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #444;
+}
+
+.search-bar input[type="search"] {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #fff;
+}
+
+.bottom-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.mode {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.moon-sun {
+    margin-right: 10px;
+}
+
+.mode-text {
+    font-size: 16px;
+}
+
+.search-page {
+    display: flex;
+    margin-left: 40%;
+    margin-top: 5%;
+    flex-direction: column;
+}
+
+.friend {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.friend-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.friend-info {
+    flex-grow: 1;
+}
+
+.friend-info h4 {
+    margin: 0;
+}
+
+.friend-info p {
+    margin: 5px 0;
+}
+
+.topic {
+    font-weight: bold;
+}
+
+.bio {
+    opacity: 0.5;
+}
+
+.content {
+    width: 60%;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #403b3b;
+    margin-bottom: 20px;
+}
+
+.content1 {
+    width: 60%;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #403b3b;
+    margin-bottom: 20px;
+    
+}
+.post{
+    display: flex;
+}
+.post-content img {
+    max-width: 100%; 
+    height: auto; 
+  }
+  
+
+  
