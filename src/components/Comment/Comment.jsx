@@ -1,6 +1,12 @@
 import { Row, Col } from 'react-bootstrap'
 import './Comment.css'
 import { Link } from 'react-router-dom'
+
+/*
+* @author Đào Duy Thái
+* @date 14/02/2024
+* @des individual comment of a post
+*/
 const Comment = () => {
     return (
         <div className="Comment">

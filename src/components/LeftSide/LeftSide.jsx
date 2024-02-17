@@ -1,5 +1,11 @@
 import './LeftSide.css';
 import { Link } from "react-router-dom";
+
+/*
+* @author Đào Duy Thái
+* @date 14/02/2024
+* @des left side of the home page
+*/
 const LeftSide = () => {
 
     return (

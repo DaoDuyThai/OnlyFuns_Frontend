@@ -1,4 +1,10 @@
 import './Comment.css'
+
+/*
+* @author Đào Duy Thái
+* @date 14/02/2024
+* @des input box to write a comment
+*/
 const WriteComment = () => {
     return (
         <div className="WriteComment">

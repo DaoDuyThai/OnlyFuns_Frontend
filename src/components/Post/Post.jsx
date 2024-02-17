@@ -12,6 +12,12 @@ import { Link } from "react-router-dom";
 // import { useSelector } from "react-redux";
 
 // const Post = ({ data }) => {
+
+/*
+* @author Đào Duy Thái
+* @date 14/02/2024
+* @des individual post of a user
+*/
 const Post = () => {
     //   const { user } = useSelector((state) => state.authReducer.authData);
     //   const [liked, setLiked] = useState(data.likes.includes(user._id));

@@ -6,6 +6,11 @@ import { Link } from 'react-router-dom';
 import OnlyFunsShortIcon from '../../assets/logo/OnlyFunsShortIcon.png';
 import OnlyFunsLongIcon from '../../assets/logo/OnlyFunsLongIcon.png';
 
+/*
+* @author Đào Duy Thái
+* @date 14/02/2024
+* @des navbar/header for the entire website
+*/
 const Header = () => {
     const [isCollapsed, setIsCollapsed] = useState(true);
 

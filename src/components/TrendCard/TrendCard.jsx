@@ -2,6 +2,11 @@
 import './TrendCard.css'
 // import {TrendData} from '../../Data/TrendData.js'
 
+/*
+* @author Đào Duy Thái
+* @date 14/02/2024
+* @des list the current trends
+*/
 const TrendCard = () => {
     return (
         <div className="TrendCard">

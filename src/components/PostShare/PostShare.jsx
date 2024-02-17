@@ -9,6 +9,12 @@ import { UilSchedule } from "@iconscout/react-unicons";
 // import { UilTimes } from "@iconscout/react-unicons";
 // import { useDispatch, useSelector } from "react-redux";
 // import { uploadImage, uploadPost } from "../../actions/UploadAction";
+
+/*
+* @author Đào Duy Thái
+* @date 14/02/2024
+* @des Input box for writing a new post and share them
+*/
 const PostShare = () => {
 
     const imageRef = useRef();
