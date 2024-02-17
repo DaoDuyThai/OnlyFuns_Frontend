@@ -1,3 +1,4 @@
+import Comments from "../../components/Comments/Comments";
 import Header from "../../components/Header/Header";
 import IndividualPost from "../../components/Post/Post";
 import "./Post.css";
@@ -8,7 +9,7 @@ const Post = () => {
       <Header />
       <div className="PostPage">
         <IndividualPost />
-        
+        <Comments />
       </div>
     </>
   );
