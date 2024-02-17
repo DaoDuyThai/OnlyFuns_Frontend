@@ -1,52 +1,61 @@
 import LineChart from '../charts/LineChart.jsx';
 import '../../style/admin-dashboard/EngagementChart.css';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { PostData } from '../../../Data.js';
 import DateTimer from '../../utilities/DateCount.js';
 
 // eslint-disable-next-line react/prop-types
 function EngagementChart() {
     const [selected, setSelected] = useState('post');
-    const [postData, setPostData] = useState({
-        labels: DateTimer,
-        datasets: [
-            {
-                label: 'Post',
-                data: PostData.map((data) => data.post),
-                borderColor: ['#1877f2'],
-            },
-        ],
-    });
-    const [commentData, setCommentData] = useState({
-        labels: DateTimer,
-        datasets: [
-            {
-                label: 'Comment',
-                data: PostData.map((data) => data.comments),
-                borderColor: ['#54c7ec'],
-            },
-        ],
-    });
-    const [allData, setAllData] = useState({
-        labels: DateTimer,
-        datasets: [
-            {
-                label: 'Comment',
-                data: PostData.map((data) => data.comments),
-                borderColor: ['#54c7ec'],
-            },
-            {
-                label: 'Post',
-                data: PostData.map((data) => data.post),
-                borderColor: ['#1877f2'],
-            },
-        ],
-    });
+    const data = useMemo(() => {
+        switch (selected) {
+            case 'post':
+                return {
+                    labels: DateTimer,
+                    datasets: [
+                        {
+                            label: 'Post',
+                            data: PostData.map((data) => data.post),
+                            borderColor: ['#1877f2'],
+                        },
+                    ],
+                };
+            case 'comment':
+                return {
+                    labels: DateTimer,
+                    datasets: [
+                        {
+                            label: 'Comment',
+                            data: PostData.map((data) => data.comments),
+                            borderColor: ['#54c7ec'],
+                        },
+                    ],
+                };
+            case 'all':
+                return {
+                    labels: DateTimer,
+                    datasets: [
+                        {
+                            label: 'Comment',
+                            data: PostData.map((data) => data.comments),
+                            borderColor: ['#54c7ec'],
+                        },
+                        {
+                            label: 'Post',
+                            data: PostData.map((data) => data.post),
+                            borderColor: ['#1877f2'],
+                        },
+                    ],
+                };
+            default:
+                return null;
+        }
+    }, [selected]);
     const option = {
         responsive: true,
     };
     return (
-        <div className="post-chart container">
+        <div className="post-chart mb-2">
             <div className="d-flex justify-content-between">
                 {selected === 'post' && <h5>Post</h5>}
                 {selected === 'comment' && <h5>Comment</h5>}
@@ -94,23 +103,7 @@ function EngagementChart() {
                 </div>
             </div>
             <hr />
-            {selected === 'post' ? (
-                <LineChart data={postData} option={option} />
-            ) : (
-                <></>
-            )}
-
-            {selected === 'comment' ? (
-                <LineChart data={commentData} option={option} />
-            ) : (
-                <></>
-            )}
-
-            {selected === 'all' ? (
-                <LineChart data={allData} option={option} />
-            ) : (
-                <></>
-            )}
+            <LineChart data={data} option={option} />
         </div>
     );
 }

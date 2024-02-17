@@ -2,7 +2,7 @@ import UserCard from './UserCard.jsx';
 import "../../style/list-report/ReportedPost.css"
 function ReportedPost() {
     return (
-        <div className="reported-post container mt-3">
+        <div className="reported-post mt-3">
             <div className="reporter">
                 <p><a><strong>Phuoc</strong></a> report this <a><strong>post</strong></a></p>
                 <hr />

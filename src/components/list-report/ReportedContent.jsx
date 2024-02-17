@@ -7,7 +7,9 @@ function ReportedContent() {
             <div className="report-header">
                 <h3 className="container">Reported Content</h3>
             </div>
-            <ReportedPost />
+            <div className='d-flex justify-content-center'>
+                <ReportedPost />
+            </div>
         </div>
     );
 }
