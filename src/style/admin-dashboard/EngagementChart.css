@@ -1,0 +1,22 @@
+.post-chart {
+    width: 876px;
+    padding: 20px;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.chart-option div {
+    margin-left: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: #e4e6eb;
+    border-radius: 20px;
+}
+
+.chart-option div:hover {
+    cursor: pointer;
+    background-color: #a9aaab;
+}
+
+.chart-option div p {
+    margin: 0;
+}

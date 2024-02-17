@@ -1,0 +1,32 @@
+.user-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+}
+
+.user-name a {
+    text-decoration: none;
+    color: black;
+}
+
+.user-name a :hover {
+    text-decoration: underline;
+}
+
+.btn-action {
+    border: none;
+    background-color: #E4E6EB;
+    padding: 10px;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+}
+
+.btn-action:hover {
+    background-color: #939090;
+}

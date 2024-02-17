@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Home from './pages/Home/Home';
 import Post from './pages/Post/Post';
+import DashBoard from './pages/Admin/DashBoard/DashBoard.jsx';
 
 function App() {
 
@@ -53,7 +54,7 @@ function App() {
 
           <Route path="/listreports" element={<h1>List Reports</h1>} />
 
-          <Route path="/dashboard" element={<h1>Dashboard</h1>} />
+          <Route path="/dashboard" element={<DashBoard/>} />
 
           <Route path="/listbanners" element={<h1>List Banners</h1>} />
 

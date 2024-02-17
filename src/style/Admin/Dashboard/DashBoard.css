@@ -1,0 +1,17 @@
+.admin-sidebar{
+    box-shadow: 1px 0 1px 1px rgba(0,0,0,0.1);
+    height: 100%;
+}
+.admin-sidebar div{
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 10px 0 10px 10px;
+    border-radius: 10px;
+}
+.admin-sidebar div:hover{
+    background-color: #CCCCCC;
+    cursor: pointer;
+}
+.admin-sidebar div p{
+    margin: 0;
+}
