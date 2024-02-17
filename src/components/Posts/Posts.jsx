@@ -7,10 +7,21 @@ import "./Posts.css";
 const Posts = () => {
     return (
         <div className="Posts">
-            <Post />
-            <Post />
-            <Post />
-            <Post />
+            <div className="singlePost">
+                <Post />
+            </div>
+            <div className="singlePost">
+                <Post />
+            </div>
+            <div className="singlePost">
+                <Post />
+            </div>
+            <div className="singlePost">
+                <Post />
+            </div>
+            <div className="singlePost">
+                <Post />
+            </div>
             {/* {loading
                 ? "Fetching posts...."
                 : posts.map((post, id) => {
