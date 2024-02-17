@@ -9,9 +9,9 @@ const Home = () => {
             <Header />
             <div className="container-fluid">
                 <div className="Home">
-                    <RightSide />
-                    <PostSide />
                     <LeftSide />
+                    <PostSide />
+                    <RightSide />
                 </div>
             </div>
 

@@ -1,0 +1,15 @@
+.RightSideBanner {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 1rem;
+    padding-left: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.rightSideBannerImg {
+    width: 20rem;
+    height: 40rem;
+}
