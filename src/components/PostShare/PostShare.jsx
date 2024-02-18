@@ -9,6 +9,12 @@ import { UilSchedule } from "@iconscout/react-unicons";
 // import { UilTimes } from "@iconscout/react-unicons";
 // import { useDispatch, useSelector } from "react-redux";
 // import { uploadImage, uploadPost } from "../../actions/UploadAction";
+
+/*
+* @author Đào Duy Thái
+* @date 14/02/2024
+* @des Input box for writing a new post and share them
+*/
 const PostShare = () => {
 
     const imageRef = useRef();
@@ -16,7 +22,7 @@ const PostShare = () => {
     return (
         <div className="PostShare">
             <img
-                src="https://www.w3schools.com/w3images/avatar1.png" className="avatar" alt="BackgroundPicture"
+                src="https://www.w3schools.com/w3images/avatar1.png" className="" alt="BackgroundPicture"
             />
             <div>
                 <input

@@ -1,9 +1,16 @@
+import Comments from "../../components/Comments/Comments";
 import Header from "../../components/Header/Header";
+import IndividualPost from "../../components/Post/Post";
+import "./Post.css";
+
 const Post = () => {
   return (
     <>
       <Header />
-      <h1>Post</h1>
+      <div className="PostPage">
+        <IndividualPost />
+        <Comments />
+      </div>
     </>
   );
 };

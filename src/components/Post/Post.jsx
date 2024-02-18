@@ -4,12 +4,20 @@ import Comment from "../../assets/img/comment.png";
 import Share from "../../assets/img/share.png";
 import Heart from "../../assets/img/like.png";
 import Carousel from 'react-bootstrap/Carousel';
-import { UilEllipsisV } from "@iconscout/react-unicons";
+// import { UilEllipsisV } from "@iconscout/react-unicons";
+import Dropdown from 'react-bootstrap/Dropdown';
+import { Link } from "react-router-dom";
 // import NotLike from "../../assets/img/notlike.png";
 // import { likePost } from "../../api/PostsRequests";
 // import { useSelector } from "react-redux";
 
 // const Post = ({ data }) => {
+
+/*
+* @author Đào Duy Thái
+* @date 14/02/2024
+* @des individual post of a user
+*/
 const Post = () => {
     //   const { user } = useSelector((state) => state.authReducer.authData);
     //   const [liked, setLiked] = useState(data.likes.includes(user._id));
@@ -34,7 +42,18 @@ const Post = () => {
                         {/* <b>{data.name} </b> */}
                     </span>
                 </div>
-                <UilEllipsisV />
+                <Dropdown>
+                    <Dropdown.Toggle variant="light" id="dropdown-basic">
+
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                        <Dropdown.Item href="/">Delete</Dropdown.Item>
+                        <Dropdown.Item href="/">Another action</Dropdown.Item>
+                        <Dropdown.Item href="/">Report</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+
             </div>
             <Carousel>
                 <Carousel.Item>
@@ -68,7 +87,9 @@ const Post = () => {
                     style={{ cursor: "pointer" }}
                 // onClick={handleLike}
                 />
-                <img src={Comment} alt="" />
+                <Link to="/post/">
+                    <img src={Comment} alt="" />
+                </Link>
                 <img src={Share} alt="" />
             </div>
 

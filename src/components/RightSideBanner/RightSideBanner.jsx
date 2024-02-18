@@ -1,6 +1,11 @@
 import './RightSideBanner.css'
 import Carousel from 'react-bootstrap/Carousel';
 
+/*
+* @author Đào Duy Thái
+* @date 14/02/2024
+* @des right side banner for advertising
+*/
 const RightSideBanner = () => {
     return (
         <div className="rightSideBanner">
