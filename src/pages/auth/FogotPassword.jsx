@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import './FogotPassword.css'
 import LongIconComponent from "../../components/LongIcon/LongIcon";
@@ -9,11 +9,11 @@ import { toast } from "react-toastify";
   * @date 16/02/2024
 */}
 const ForgotPassword = () => {
-    const [email, setEmail] = useState(""); 
+    const [email, setEmail] = useState("");
     const [validEmail, setValidEmail] = useState(true);
 
     const handleChange = (e) => {
-        setEmail(e.target.value); 
+        setEmail(e.target.value);
     };
 
     const validateEmail = (email) => {
@@ -59,9 +59,12 @@ const ForgotPassword = () => {
                                 onChange={handleChange}
                             />
                         </div>
-                        <button type="submit" className="btn btn-primary">
-                            Reset Password
-                        </button>
+                        <center>
+                            <button type="submit" className="btn btn-primary">
+                                Reset Password
+                            </button>
+                        </center>
+
                     </form>
                     <div className="back-to-login">
                         <Link to="/login">Back to Login</Link>

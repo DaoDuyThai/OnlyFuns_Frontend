@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faEnvelope, faUser, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 // import Logo from "/src/assets/logo/OnlyFunsShortIcon.png";
 import { Link, useLocation } from 'react-router-dom';
 
+// eslint-disable-next-line react/prop-types
 function Sidebar({ setSearchTerm }) {
     const location = useLocation();
     const [searchValue, setSearchValue] = useState('');
