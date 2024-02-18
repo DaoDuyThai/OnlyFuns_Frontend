@@ -3,22 +3,33 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from './pages/Home/Home';
 import Post from './pages/Post/Post';
 import DashBoard from './pages/Admin/DashBoard/DashBoard.jsx';
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
+import SearchPage from "./pages/Search/Search";
+import SearchPost from "./pages/Search/SearchPost";
+import SearchPeople from "./pages/Search/SearchPeople";
+import ForgotPassword from "./pages/auth/FogotPassword";
+import Verify from "./pages/auth/Verify";
+import LoadingPage from "./pages/auth/RedirectPage";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
   return (
     <>
+      <ToastContainer />
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<h1>Login</h1>} />
+          <Route path="/login" element={<Login />} />
 
-          <Route path="/register" element={<h1>Register</h1>} />
+          <Route path="/register" element={<Register />} />
 
-          <Route path="/verify" element={<h1>Verify</h1>} />
+          <Route path="/verify" element={<Verify />} />
 
-          <Route path="/forgotpassword" element={<h1>Forgot Password</h1>} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
 
-          <Route path="/redirectpage" element={<h1>Redirect Page</h1>} />
+          <Route path="/redirectpage" element={<LoadingPage />} />
 
           {/*
           * @des home page of a social network
@@ -26,7 +37,7 @@ function App() {
           * @date 14/02/2024
           */}
           <Route path="/" element={<Home />} />
-          
+
           {/*
           * @des view post details of a social network
           * @author Đào Duy Thái
@@ -34,11 +45,11 @@ function App() {
           */}
           <Route path="/post" element={<Post />} />
 
-          <Route path="/search" element={<h1>Search</h1>} />
+          <Route path="/search/*" element={<SearchPage />} />
 
-          <Route path="/search/people" element={<h1>Search People</h1>} />
+          <Route path="/search/people" element={<SearchPeople />} />
 
-          <Route path="/search/posts" element={<h1>Search Posts</h1>} />
+          <Route path="/search/posts" element={<SearchPost />} />
 
           <Route path="/profile" element={<h1>Profile</h1>} />
 
