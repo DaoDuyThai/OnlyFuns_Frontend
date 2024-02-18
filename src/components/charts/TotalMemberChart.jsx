@@ -1,4 +1,4 @@
-import LineChart from '../charts/LineChart.jsx';
+import LineChart from './LineChart.jsx';
 import '../../style/admin-dashboard/TotalMember.css';
 import { useState } from 'react';
 import { UserData } from '../../../Data.js';

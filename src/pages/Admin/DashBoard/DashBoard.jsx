@@ -1,22 +1,16 @@
 import Header from '../../../components/Header/Header.jsx';
-import EngagementChart from '../../../components/admin-dashboard/EngagementChart.jsx';
 import '../../../style/Admin/Dashboard/DashBoard.css';
-import TotalMemberChart from '../../../components/admin-dashboard/TotalMemberChart.jsx';
 import { useMemo, useState } from 'react';
 import ReportedContent from '../../../components/list-report/ReportedContent.jsx';
 import ListMember from '../../../components/admin-listmember/ListMember.jsx';
+import OverviewDashboard from '../../../components/admin-dashboard/OverviewDashboard.jsx';
 
 function DashBoard() {
     const [selected, setSelected] = useState('overview');
     const renderComponent = useMemo(() => {
         switch (selected) {
             case 'overview':
-                return (
-                    <div>
-                        <EngagementChart />
-                        <TotalMemberChart />
-                    </div>
-                );
+                return <OverviewDashboard />;
 
             case 'reported':
                 return <ReportedContent />;

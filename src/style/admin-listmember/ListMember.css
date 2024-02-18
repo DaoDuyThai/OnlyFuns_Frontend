@@ -1,8 +1,24 @@
+.list-member-content {
+    width: 100%;
+}
+
+.list-member-header {
+    height: 129px;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.list-member-header h3 {
+    width: 60%;
+    font-weight: bold;
+}
+
 .list-member {
     box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     margin-top: 20px;
     padding: 20px;
+    width: 60%;
 }
 
 .search-bar input {

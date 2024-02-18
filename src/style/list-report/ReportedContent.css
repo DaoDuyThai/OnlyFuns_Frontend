@@ -4,6 +4,7 @@
     padding: 10px;
 }
 .report-header h3{
+    width: 60%;
     font-weight: bold;
 }
 .reported-content{

@@ -1,4 +1,4 @@
-import LineChart from '../charts/LineChart.jsx';
+import LineChart from './LineChart.jsx';
 import '../../style/admin-dashboard/EngagementChart.css';
 import { useMemo, useState } from 'react';
 import { PostData } from '../../../Data.js';
@@ -55,7 +55,7 @@ function EngagementChart() {
         responsive: true,
     };
     return (
-        <div className="post-chart mb-2">
+        <div className="post-chart mb-4">
             <div className="d-flex justify-content-between">
                 {selected === 'post' && <h5>Post</h5>}
                 {selected === 'comment' && <h5>Comment</h5>}
