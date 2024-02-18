@@ -6,10 +6,21 @@
     font-stretch: normal;
     font-size: 3em;
     text-align: center;
+
+
 }
-.p1{
+
+.loading-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.p1 {
     color: #4a8df8;
-    font-family: 'Raleway', cursive; 
+    font-family: 'Raleway', cursive;
     font-size: 1em;
 }
 
@@ -24,6 +35,7 @@
 }
 
 .line {
+    margin-top: 5%;
     position: absolute;
     background: #4a8df8;
     width: 400px;
@@ -38,6 +50,7 @@
 }
 
 .dot1 {
+    margin-top: 5%;
     -webkit-animation: loading 2s infinite;
     -moz-animation: loading 2s infinite;
     -ms-animation: loading 2s infinite;
@@ -46,6 +59,7 @@
 }
 
 .dot2 {
+    margin-top: 5%;
     -webkit-animation: loading 2s 0.5s infinite;
     -moz-animation: loading 2s 0.5s infinite;
     -ms-animation: loading 2s 0.5s infinite;
@@ -54,6 +68,7 @@
 }
 
 .dot3 {
+    margin-top: 5%;
     -webkit-animation: loading 2s 1s infinite;
     -moz-animation: loading 2s 1s infinite;
     -ms-animation: loading 2s 1s infinite;
