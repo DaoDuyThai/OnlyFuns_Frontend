@@ -1,0 +1,14 @@
+.overview-dashboard{
+    width: 100%;
+}
+
+.overview-header{
+    height: 129px;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.overview-header h3{
+    width: 60%;
+    font-weight: bold;
+}
