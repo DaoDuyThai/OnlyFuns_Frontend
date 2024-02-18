@@ -121,7 +121,7 @@ const SearchPage = () => {
             </div>
           ))}
           {!showAll && filteredFriends.length > 3 && (
-            <button onClick={toggleShowAll}>Xem tất cả</button>
+            <button onClick={toggleShowAll} className='custom-button'>Xem tất cả</button>
           )}
         </div>
 

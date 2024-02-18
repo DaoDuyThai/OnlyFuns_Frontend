@@ -31,7 +31,7 @@ function Sidebar({ setSearchTerm }) {
                                 value={searchValue}
                                 onChange={(e) => setSearchValue(e.target.value)}
                             />
-                            <button onClick={handleSearch}>
+                            <button onClick={handleSearch} className='custom-button'>
                                 <FontAwesomeIcon icon={faSearch} />
                             </button>
                         </li>
