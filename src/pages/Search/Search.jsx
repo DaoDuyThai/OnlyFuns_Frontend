@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Sidebar from "../../components/Header/Sidebar";
+
 import { useLocation, useNavigate } from 'react-router-dom';
 import queryString from 'query-string';
 import './SearchPage.css';
+import Sidebar from '../../components/Sidebar/Sidebar';
+import Header from '../../components/HeaderSearch/Header';
+import Post from '../../components/Post/Post';
 {/*
   * @des SearchPage
   * @author Trinh Minh Phuc
@@ -101,42 +104,48 @@ const SearchPage = () => {
   };
 
   return (
-    <div className="search-page">
-      <Sidebar setSearchTerm={handleSearch} />
-      <div className="content">
-        <p>Kết qủa tìm kiếm: {searchTerm}</p>
-        {/* <p className='topic'>Mọi người</p> */}
-        {filteredFriends.slice(0, showAll ? filteredFriends.length : 3).map(friend => (
-          <div key={friend.id} className="friend">
-            <img src={friend.image} alt={friend.name} className="friend-image" />
-            <div className="friend-info">
-              <h4>{friend.name}</h4>
-              <p className='bio'>{friend.bio}</p>
+    <>
+      <Header />
+      <div className="search-page">
+        <Sidebar setSearchTerm={handleSearch} />
+        <div className="content">
+          <p>Kết qủa tìm kiếm: {searchTerm}</p>
+          {/* <p className='topic'>Mọi người</p> */}
+          {filteredFriends.slice(0, showAll ? filteredFriends.length : 3).map(friend => (
+            <div key={friend.id} className="friend">
+              <img src={friend.image} alt={friend.name} className="friend-image" />
+              <div className="friend-info">
+                <b>{friend.name}</b>
+                <p className='bio'>{friend.bio}</p>
+              </div>
             </div>
-          </div>
-        ))}
-        {!showAll && filteredFriends.length > 3 && (
-          <button onClick={toggleShowAll}>Xem tất cả</button>
-        )}
-      </div>
-
-      {filteredPosts.map(post => (
-        <div key={post.id} className="content1">
-          <div className='post'>
-            <img src={post.image} alt={post.author} className="friend-image" />
-            <div className="friend-info">
-              <h4>{post.author}</h4>
-              <p className='bio'>{post.time}</p>
-            </div>
-          </div>
-          <div className="post-content">
-            <p>{post.content}</p>
-            <img src={post.imgContent} />
-          </div>
+          ))}
+          {!showAll && filteredFriends.length > 3 && (
+            <button onClick={toggleShowAll}>Xem tất cả</button>
+          )}
         </div>
-      ))}
 
-    </div>
+        {/* {filteredPosts.map(post => (
+          <div key={post.id} className="content1">
+            <div className='post'>
+              <img src={post.image} alt={post.author} className="friend-image" />
+              <div className="friend-info">
+                <h4>{post.author}</h4>
+                <p className='bio'>{post.time}</p>
+              </div>
+            </div>
+            <div className="post-content">
+              <p>{post.content}</p>
+              <img src={post.imgContent} />
+            </div>
+          </div>
+        ))} */}
+        <div className='post'>
+          <Post />
+        </div>
+
+      </div>
+    </>
   );
 }
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faEnvelope, faUser, faPlus } from '@fortawesome/free-solid-svg-icons';
-import Logo from "/src/assets/logo/OnlyFunsShortIcon.png";
+import { faSearch, faEnvelope, faUser, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+// import Logo from "/src/assets/logo/OnlyFunsShortIcon.png";
 import { Link, useLocation } from 'react-router-dom';
 
 function Sidebar({ setSearchTerm }) {
@@ -20,17 +20,6 @@ function Sidebar({ setSearchTerm }) {
 
     return (
         <nav className='sidebar'>
-            <header>
-                <div className="image-text">
-                    <span className="image">
-                        <img src={Logo} alt="logo" />
-                    </span>
-                    <div className="text header-text">
-                        <span className="main">Sidebar</span>
-                        <span className="sub">Component</span>
-                    </div>
-                </div>
-            </header>
 
             <div className="menu-bar">
                 <div className="menu">
@@ -60,7 +49,7 @@ function Sidebar({ setSearchTerm }) {
                         </li>
                         <li className="nav-link">
                             <Link to={`/search/posts?q=${searchValue}`}>
-                                <FontAwesomeIcon icon={faPlus} className="icons" />
+                            <FontAwesomeIcon icon={faPenToSquare} className="icons"/>
                                 <span className="text nav-text">Post</span>
                             </Link>
                         </li>

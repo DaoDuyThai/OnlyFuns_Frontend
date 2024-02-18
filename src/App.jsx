@@ -10,22 +10,25 @@ import SearchPeople from "./pages/Search/SearchPeople";
 import ForgotPassword from "./pages/auth/FogotPassword";
 import Verify from "./pages/auth/Verify";
 import LoadingPage from "./pages/auth/RedirectPage";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
   return (
     <>
+      <ToastContainer />
       <BrowserRouter>
         <Routes>
-        <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login />} />
 
-          <Route path="/register" element={<Register/>} />
+          <Route path="/register" element={<Register />} />
 
-          <Route path="/verify" element={<Verify/>} />
+          <Route path="/verify" element={<Verify />} />
 
-          <Route path="/forgotpassword" element={<ForgotPassword/>} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
 
-          <Route path="/redirectpage" element={<LoadingPage/>} />
+          <Route path="/redirectpage" element={<LoadingPage />} />
 
           {/*
           * @des home page of a social network
@@ -33,7 +36,7 @@ function App() {
           * @date 14/02/2024
           */}
           <Route path="/" element={<Home />} />
-          
+
           {/*
           * @des view post details of a social network
           * @author Đào Duy Thái
@@ -41,11 +44,11 @@ function App() {
           */}
           <Route path="/post" element={<Post />} />
 
-          <Route path="/search/*" element={<SearchPage/>} />
+          <Route path="/search/*" element={<SearchPage />} />
 
-          <Route path="/search/people" element={<SearchPeople/>} />
+          <Route path="/search/people" element={<SearchPeople />} />
 
-          <Route path="/search/posts" element={<SearchPost/>} />
+          <Route path="/search/posts" element={<SearchPost />} />
 
           <Route path="/profile" element={<h1>Profile</h1>} />
 

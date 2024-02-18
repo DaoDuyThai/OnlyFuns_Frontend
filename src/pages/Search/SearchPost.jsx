@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Sidebar from "../../components/Header/Sidebar";
+
 import { useLocation, useNavigate } from 'react-router-dom';
 import './SearchPage.css';
+import Sidebar from '../../components/Sidebar/Sidebar';
+import Post from '../../components/Post/Post';
+import Header from '../../components/HeaderSearch/Header';
 {/*
   * @des SearchPost
   * @author Trinh Minh Phuc
@@ -59,9 +62,15 @@ const SearchPost = () => {
   };
 
   return (
-    <div className="search-page">
-      <Sidebar setSearchTerm={handleSearch} />
-      {filteredPosts.map(post => (
+    <>
+      <Header />
+      <div className="search-page">
+        <Sidebar setSearchTerm={handleSearch} />
+        <div className='post'>
+          <Post />
+        </div>
+
+        {/* {filteredPosts.map(post => (
         <div key={post.id} className="content1">
           <div className='post'>
             <img src={post.image} alt={post.author} className="friend-image" />
@@ -75,8 +84,9 @@ const SearchPost = () => {
             {post.imgContent && <img src={post.imgContent} alt="post image" />}
           </div>
         </div>
-      ))}
-    </div>
+      ))} */}
+      </div>
+    </>
   );
 }
 

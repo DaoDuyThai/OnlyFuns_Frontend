@@ -3,9 +3,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
+.logo-img {
+    width: 30%;
+    height: auto;
+}
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10%;
+}
+.login{
+    height: 100vh;
+    overflow-y: hidden;
+}
 .a-left {
     flex: 1;
     display: flex;
@@ -36,8 +49,8 @@
     max-width: 400px;
     padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgb(236, 229, 229);
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px rgb(47, 43, 43);
     /* Hiệu ứng bóng */
 }
 
@@ -52,7 +65,7 @@ h3 {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 1rem;
 }
 
 .infoInput[type="password"] {
@@ -66,7 +79,7 @@ h3 {
     background-color: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 1rem;
     cursor: pointer;
 }
 
@@ -120,6 +133,6 @@ h3 {
 
     .a-left img {
         margin-bottom: 20px;
-       
+
     }
 }

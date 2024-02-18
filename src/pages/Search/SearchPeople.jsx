@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Sidebar from "../../components/Header/Sidebar";
+
 import './SearchPage.css';
 import { useLocation, useNavigate } from 'react-router-dom';
+import Sidebar from '../../components/Sidebar/Sidebar';
+import Header from '../../components/HeaderSearch/Header';
 {/*
   * @des SearchPeople
   * @author Trinh Minh Phuc
@@ -63,22 +65,25 @@ const SearchPeople = () => {
     };
 
     return (
-        <div className="search-page">
-            <Sidebar setSearchTerm={handleSearch} />
-            <div className="content">
-                <p>Kết quả tìm kiếm : {searchTerm}</p>
-                {/* <p className='topic'>Mọi người</p> */}
-                {filteredFriends.map(friend => (
-                    <div key={friend.id} className="friend">
-                        <img src={friend.image} alt={friend.name} className="friend-image" />
-                        <div className="friend-info">
-                            <h4>{friend.name}</h4>
-                            <p className='bio'>{friend.bio}</p>
+        <>
+            <Header />
+            <div className="search-page">
+                <Sidebar setSearchTerm={handleSearch} />
+                <div className="content">
+                    <p>Kết quả tìm kiếm : {searchTerm}</p>
+                    {/* <p className='topic'>Mọi người</p> */}
+                    {filteredFriends.map(friend => (
+                        <div key={friend.id} className="friend">
+                            <img src={friend.image} alt={friend.name} className="friend-image" />
+                            <div className="friend-info">
+                                <b>{friend.name}</b>
+                                <p className='bio'>{friend.bio}</p>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 
