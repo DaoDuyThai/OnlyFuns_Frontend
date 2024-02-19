@@ -1,5 +1,6 @@
 import './ProfileHeader.css';
 import ActionBar from './ActionBar/ActionBar';
+import { Link } from 'react-router-dom';
 const ProfileHeader = () => {
     return (
         <>
@@ -19,12 +20,10 @@ const ProfileHeader = () => {
                     </div>
                 </div>
                 <div className="col-9 profileUtils">
-                    <div className="profileName">
-                        <h1>John Doe</h1>
-                    </div>
-                    <button className="col-3 editProfile btn btn-primary">
+                    <div className="profileName">John Doe</div>
+                    <Link to={'edit'} className="btn btn-primary">
                         Edit Profile
-                    </button>
+                    </Link>
                 </div>
                 <ActionBar />
             </div>

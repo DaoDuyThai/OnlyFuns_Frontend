@@ -1,0 +1,21 @@
+.followerCard{
+    display: flex;
+    align-items: center;
+    padding:10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.followerCard .followerCardAvatar img{
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.followerCard .followerCardInfoName{
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 4px;
+}
+.followerCard .followerCardAction{
+    margin-left: 4px;
+}
