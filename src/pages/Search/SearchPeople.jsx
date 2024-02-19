@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './SearchPage.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Sidebar from '../../components/Sidebar/Sidebar';
-import Header from '../../components/HeaderSearch/Header';
+import Header from '../../components/Header/Header';
 {/*
   * @des SearchPeople
   * @author Trinh Minh Phuc

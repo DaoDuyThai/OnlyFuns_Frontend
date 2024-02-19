@@ -5,6 +5,7 @@ import './Header.css';
 import { Link } from 'react-router-dom';
 import OnlyFunsShortIcon from '../../assets/logo/OnlyFunsShortIcon.png';
 import OnlyFunsLongIcon from '../../assets/logo/OnlyFunsLongIcon.png';
+import Search from '../Search/Search';
 
 /*
 * @author Đào Duy Thái
@@ -38,24 +39,7 @@ const Header = () => {
 
                     <div className={`collapse navbar-collapse ${isCollapsed ? '' : 'show'}`} id="navbarSupportedContent">
                         <form className="d-flex input-group w-auto ms-lg-3 my-3 my-lg-0">
-                            <input
-                                type="search"
-                                className="form-control"
-                                placeholder="Search"
-                                aria-label="Search"
-                                style={{
-                                    backgroundColor: "white",
-                                    borderRadius: "10px",
-                                    padding: "10px",
-                                    fontSize: "17px",
-                                    border: "none",
-                                    outline: "none"
-                                }} />
-                            <button className="btn btn-primary" type="button" data-mdb-ripple-color="dark">
-                                <div>
-                                    <i className="fas fa-search fa-lg mb-1"></i>
-                                </div>
-                            </button>
+                            <Search/>
                         </form>
                         <ul className="navbar-nav me-auto d-flex flex-row mt-3 mt-lg-0">
                         </ul>

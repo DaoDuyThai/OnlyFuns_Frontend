@@ -5,7 +5,7 @@ import { faSearch, faEnvelope, faUser, faPenToSquare } from '@fortawesome/free-s
 import { Link, useLocation } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
-function Sidebar({ setSearchTerm }) {
+function Sidebar() {
     const location = useLocation();
     const [searchValue, setSearchValue] = useState('');
 
@@ -15,17 +15,15 @@ function Sidebar({ setSearchTerm }) {
         setSearchValue(q);
     }, [location.search]);
 
-    const handleSearch = () => {
-        setSearchTerm(searchValue);
-    };
+   
 
     return (
         <nav className='sidebar'>
-
+            
             <div className="menu-bar">
                 <div className="menu">
                     <ul className="menu-links">
-                        <li className="search-bar">
+                        {/* <li className="search-bar">
                             <input
                                 type="search"
                                 placeholder="Search..."
@@ -35,9 +33,9 @@ function Sidebar({ setSearchTerm }) {
                             <button onClick={handleSearch} className='custom-button'>
                                 <FontAwesomeIcon icon={faSearch} />
                             </button>
-                        </li>
+                        </li> */}
                         <li className="nav-link">
-                            <Link to={'/search'}>
+                            <Link to={`/search/top?q=${searchValue}`}>
                                 <FontAwesomeIcon icon={faEnvelope} className="icons" />
                                 <span className="text nav-text">All</span>
                             </Link>
