@@ -6,6 +6,7 @@ import DashBoard from './pages/Admin/DashBoard/DashBoard.jsx';
 import Profile from './pages/Profile/Profile.jsx';
 import Connections from './pages/Connections/Connections.jsx';
 import EditProfile from './pages/Profile/EditProfile/EditProfile.jsx';
+import Notifications from './pages/Notifications/Notifications.jsx';
 function App() {
     return (
         <>
@@ -59,10 +60,7 @@ function App() {
 
                     <Route path="/connections" element={<Connections />} />
 
-                    <Route
-                        path="/notifications"
-                        element={<h1>Notifications</h1>}
-                    />
+                    <Route path="/notifications" element={<Notifications />} />
 
                     <Route path="/chat" element={<h1>Chat</h1>} />
 

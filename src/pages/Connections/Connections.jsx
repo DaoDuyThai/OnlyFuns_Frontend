@@ -1,9 +1,11 @@
 import ProfileHeader from '../../components/Profile/ProfileHeader/ProfileHeader';
 import FollowerCard from '../../components/Profile/ProfileContent/Connections/FollowerCard/FollowerCard';
+import Header from '../../components/Header/Header';
 import './Connections.css';
 const Connections = () => {
     return (
         <>
+            <Header />
             <div className="container">
                 <ProfileHeader />
                 <div className="row connections">
