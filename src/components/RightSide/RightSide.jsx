@@ -2,6 +2,7 @@
 import "./RightSide.css";
 import TrendCard from '../TrendCard/TrendCard';
 import RightSideBanner from '../RightSideBanner/RightSideBanner';
+import HomeAdsBanner from '../ads-banner/HomeAdsBanner.jsx';
 
 // import ShareModal from "../ShareModal/ShareModal";
 
@@ -24,7 +25,8 @@ const RightSide = () => {
                     Share
                 </button>
                 <ShareModal modalOpened={modalOpened} setModalOpened={setModalOpened} /> */}
-            <RightSideBanner />
+            {/*<RightSideBanner />*/}
+            <HomeAdsBanner/>
         </div>
 
 

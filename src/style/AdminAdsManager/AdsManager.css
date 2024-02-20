@@ -1,0 +1,74 @@
+.ads-manage {
+    width: 100%;
+    height: 100vh;
+}
+
+.ads-manager-header {
+    height: 4rem;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.ads-manager-header h3 {
+    font-weight: bold;
+}
+
+.ads-create-btn {
+    background-color: #0866ff;
+    color: white;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+.ads-create-btn:active {
+    background-color: #0444b7;
+}
+
+.ads-manage-body {
+    border-radius: 10px;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    padding: 20px;
+}
+
+.ads-manage-body p {
+    color: #6c6c6c;
+}
+
+.ads-manage-list table {
+    width: 100%;
+}
+
+.ads-manage-list table th {
+    border-bottom: 1px solid #c6c7c8;
+    padding: 10px;
+}
+
+.ads-manage-list table td {
+    border-bottom: 1px solid #c6c7c8;
+    border-top: 1px solid #c6c7c8;
+    padding: 10px;
+}
+
+.ads-manage-list table tr:last-child td {
+    border-bottom: none;
+}
+
+.ads-active {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: mediumspringgreen;
+}
+
+.ads-inactive {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: red;
+}
+
+.ads-to-detail {
+    text-decoration: none;
+}

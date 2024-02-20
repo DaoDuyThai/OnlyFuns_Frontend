@@ -1,0 +1,6 @@
+.home-ads-banner img{
+    border-radius: 20px;
+}
+.home-ads-banner img:hover{
+    cursor: pointer;
+}
