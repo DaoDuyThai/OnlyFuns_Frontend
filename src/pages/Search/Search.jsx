@@ -6,6 +6,7 @@ import './SearchPage.css';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import Header from '../../components/Header/Header';
 import Post from '../../components/Post/Post';
+import Posts from '../../components/Posts/Posts';
 {/*
   * @des SearchPage
   * @author Trinh Minh Phuc
@@ -141,7 +142,8 @@ const SearchPage = () => {
           </div>
         ))} */}
         <div className='post'>
-          <Post />
+          {/* <Posts /> */}
+          <Posts />
         </div>
 
       </div>

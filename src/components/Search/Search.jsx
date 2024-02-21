@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const Search = () => {
@@ -24,20 +24,30 @@ const Search = () => {
     };
 
     return (
-        <div>
-            <li className="search-bar">
-                <input
-                    type="search"
-                    placeholder="Search..."
-                    value={searchValue}
-                    onChange={(e) => setSearchValue(e.target.value)}
-                />
-                <button onClick={handleSearch} className='custom-button'>
-                    <FontAwesomeIcon icon={faSearch} />
-                </button>
-            </li>
-        </div>
+        <form className="d-flex input-group w-auto ms-lg-3 my-3 my-lg-0">
+
+            <input className='form-control'
+                type="search"
+                placeholder="Search..."
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
+            />
+            <button onClick={handleSearch} className='btn btn-primary'>
+                <div>
+                    <i className="fas fa-search fa-lg mb-1"></i>
+                </div>
+            </button>
+        </form>
     );
 }
 
 export default Search;
+
+<form className="d-flex input-group w-auto ms-lg-3 my-3 my-lg-0">
+
+    <button className="btn btn-primary" type="button" data-mdb-ripple-color="dark">
+        <div>
+            <i className="fas fa-search fa-lg mb-1"></i>
+        </div>
+    </button>
+</form>
