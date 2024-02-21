@@ -1,15 +1,10 @@
 import './Timeline.css';
-import Post from '../../../Post/Post';
+import Posts from '../../../Posts/Posts';
 const Timeline = () => {
     return (
-        <div className="col-md-12 timeline">
-            <h2>Timeline</h2>
-            <div className="posts">
-                <Post />
-                <Post />
-                <Post />
-            </div>
-        </div>
+        <Posts />
+
+        
     );
 };
 export default Timeline;

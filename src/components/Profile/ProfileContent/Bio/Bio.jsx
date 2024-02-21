@@ -1,8 +1,8 @@
 import './Bio.css';
 const Bio = () => {
     return (
-        <div className="col-md-12 bio">
-            <div className="content">
+        <div className="col-md-12 bioLayout">
+            <div className="BioContent">
                 <h2>Bio</h2>
                 <div className="details">
                     <p>Software Engineering</p>

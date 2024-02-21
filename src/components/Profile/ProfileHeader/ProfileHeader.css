@@ -8,6 +8,8 @@
     border-radius: 5px;
     border: solid 1px #e0e0e0;
     margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
 }
 .profileHeader .images {
     height: 26.25rem;

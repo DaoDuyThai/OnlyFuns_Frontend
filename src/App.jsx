@@ -17,6 +17,7 @@ import Profile from './pages/Profile/Profile.jsx';
 import Connections from './pages/Connections/Connections.jsx';
 import EditProfile from './pages/Profile/EditProfile/EditProfile.jsx';
 import Notifications from './pages/Notifications/Notifications.jsx';
+import Chat from './pages/Chat/Chat.jsx';
 
 function App() {
 
@@ -63,7 +64,7 @@ function App() {
 
           <Route path="/notifications" element={<Notifications />} />
 
-          <Route path="/chat" element={<h1>Chat</h1>} />
+          <Route path="/chat" element={<Chat />} />
 
           <Route path="/listmembers" element={<h1>List Members</h1>} />
 

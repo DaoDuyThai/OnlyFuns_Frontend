@@ -7,7 +7,8 @@ const ChatHeader = () => {
                         className="rounded-circle"
                         src="https://via.placeholder.com/150"
                         alt="John Doe"
-                        width="50"
+                        width={'50px'}
+                        height={'50px'}
                     />
                 </div>
                 <div className="ps-2">

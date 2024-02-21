@@ -4,7 +4,7 @@ const FollowerCard = () => {
         <div className="col-md-4">
             <div className="followerCard">
                 <div className="followerCardAvatar">
-                    <img src="https://via.placeholder.com/150" alt="avatar" />
+                    <img src="https://www.w3schools.com/w3images/mountains.jpg" alt="avatar" />
                 </div>
                 <div className="followerCardInfo">
                     <span className="followerCardInfoName">John Doe</span>

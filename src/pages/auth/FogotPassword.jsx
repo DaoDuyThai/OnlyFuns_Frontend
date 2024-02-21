@@ -43,7 +43,7 @@ const ForgotPassword = () => {
             <div className="logo">
                 <LongIconComponent />
             </div>
-            <div className="container">
+            <div className="ForgotPasswordContainer">
                 <div className="forgot-password">
                     <h2>Forgot Password</h2>
                     <form onSubmit={handleSubmit}>

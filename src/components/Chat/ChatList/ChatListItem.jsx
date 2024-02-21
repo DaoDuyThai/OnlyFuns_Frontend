@@ -5,9 +5,10 @@ const ChatList = () => {
             <div>
                 <img
                     className="rounded-circle"
-                    src="https://via.placeholder.com/150"
+                    src="https://www.w3schools.com/w3images/mountains.jpg"
                     alt="John Doe"
-                    width="50"
+                    width="50px"
+                    height="50px"
                 />
             </div>
             <div className="ps-2">

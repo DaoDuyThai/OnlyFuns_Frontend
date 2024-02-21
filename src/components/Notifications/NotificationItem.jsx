@@ -5,9 +5,11 @@ const NotificationItem = () => {
                 <div>
                     <img
                         className="rounded-circle"
-                        src="https://via.placeholder.com/150"
+                        src="https://www.w3schools.com/w3images/mountains.jpg"
                         alt="John Doe"
                         width="50"
+                        height="50"
+
                     />
                 </div>
                 <div className="ps-2">

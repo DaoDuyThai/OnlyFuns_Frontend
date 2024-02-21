@@ -3,7 +3,7 @@ import './Connections.css';
 const ConnectionsBoard = () => {
     return (
         <div className="col-md-12 connectionsBoard">
-            <div className="content">
+            <div className="ConnectionContent">
                 <h2
                     onClick={() => {
                         console.log('clicked');
@@ -11,7 +11,7 @@ const ConnectionsBoard = () => {
                 >
                     Connections
                 </h2>
-                <div className="list">
+                <div className="ConnectionList">
                     <Follower />
                     <Follower />
                     <Follower />

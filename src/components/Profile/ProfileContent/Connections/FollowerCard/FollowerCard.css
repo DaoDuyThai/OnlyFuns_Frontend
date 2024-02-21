@@ -10,6 +10,8 @@
 .followerCard .followerCardAvatar img{
     border-radius: 50%;
     margin-right: 10px;
+    width: 150px;
+    height: 150px;
 }
 .followerCard .followerCardInfoName{
     font-size: 16px;
