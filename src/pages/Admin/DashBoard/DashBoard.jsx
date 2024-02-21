@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import ReportedContent from '../../../components/list-report/ReportedContent.jsx';
 import ListMember from '../../../components/admin-listmember/ListMember.jsx';
 import OverviewDashboard from '../../../components/admin-dashboard/OverviewDashboard.jsx';
+import AdsManagement from '../../../components/AdminAdsManagement/AdsManagement.jsx';
 
 function DashBoard() {
     const [selected, setSelected] = useState('overview');
@@ -31,6 +32,8 @@ function DashBoard() {
             case 'members':
                 return <ListMember />;
 
+            case "ads":
+                return <AdsManagement/>
             default:
                 return <></>;
         }
@@ -40,7 +43,7 @@ function DashBoard() {
             <Header />
             <div className="d-flex row">
                 <div className="col-md-2 pe-0">
-                    <div className="admin-sidebar">
+                    <div className="admin-sidebar p-1">
                         <div
                             className="d-flex mb-2"
                             onClick={() => setSelected('community-home')}
@@ -105,7 +108,7 @@ function DashBoard() {
                             <p>Reported-Content</p>
                         </div>
                         <div
-                            className="d-flex"
+                            className="d-flex mb-2"
                             onClick={() => setSelected('members')}
                             style={
                                 selected === 'members'
@@ -124,6 +127,27 @@ function DashBoard() {
                                 }}
                             ></i>
                             <p>Members</p>
+                        </div>
+                        <div
+                            className="d-flex"
+                            onClick={() => setSelected('ads')}
+                            style={
+                                selected === 'ads'
+                                    ? {
+                                          backgroundColor: '#ebf5ff',
+                                          color: '#0866ff',
+                                      }
+                                    : {}
+                            }
+                        >
+                            <i
+                                className="fa-solid fa-money-check-dollar fa-lg"
+                                style={{
+                                    marginTop: '13px',
+                                    marginRight: '10px',
+                                }}
+                            ></i>
+                            <p>ADS-Manager</p>
                         </div>
                     </div>
                 </div>

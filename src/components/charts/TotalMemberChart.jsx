@@ -22,7 +22,7 @@ function TotalMemberChart() {
         responsive: true,
     };
     return (
-        <div className="total-member mb-2 container">
+        <div className="total-member mb-2">
             <h5>Total Member : 200</h5>
             <hr />
             <LineChart data={userData} option={option} />
