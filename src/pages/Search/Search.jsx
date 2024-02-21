@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import queryString from 'query-string';
 import './SearchPage.css';
 import Sidebar from '../../components/Sidebar/Sidebar';
-import Header from '../../components/HeaderSearch/Header';
+import Header from '../../components/Header/Header';
 import Post from '../../components/Post/Post';
 {/*
   * @des SearchPage

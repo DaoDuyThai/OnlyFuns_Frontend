@@ -5,6 +5,7 @@ import './Header.css';
 import { Link } from 'react-router-dom';
 import OnlyFunsShortIcon from '../../assets/logo/OnlyFunsShortIcon.png';
 import OnlyFunsLongIcon from '../../assets/logo/OnlyFunsLongIcon.png';
+// import Search from '../Search/Search';
 
 
 /*
@@ -58,6 +59,7 @@ const Header = () => {
                                 </div>
                             </button>
                         </form> */}
+                        {/* <Search/> */}
                         <ul className="navbar-nav me-auto d-flex flex-row mt-3 mt-lg-0">
                         </ul>
                         <ul className="navbar-nav me-auto ms-auto d-flex flex-row mt-3 mt-lg-0">

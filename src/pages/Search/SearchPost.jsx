@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import './SearchPage.css';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import Post from '../../components/Post/Post';
-import Header from '../../components/HeaderSearch/Header';
+import Header from '../../components/Header/Header';
 {/*
   * @des SearchPost
   * @author Trinh Minh Phuc
