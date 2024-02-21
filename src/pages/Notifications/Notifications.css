@@ -1,0 +1,10 @@
+.notiRow {
+    padding-top: 2rem;
+}
+.notiList{
+    height: fit-content;
+}
+.notiList .notiItem {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+}

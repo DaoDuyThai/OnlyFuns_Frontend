@@ -1,0 +1,12 @@
+.connectionsBoard {
+    margin-top: 0.5rem;
+    border: solid 1px #e0e0e0;
+    border-radius: 5px;
+}
+.connectionsBoard .content {
+    padding: 1rem;    
+}
+.connectionsBoard .content h2 {  
+    cursor: pointer;
+}
+

@@ -13,6 +13,10 @@ import Verify from "./pages/auth/Verify";
 import LoadingPage from "./pages/auth/RedirectPage";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import Profile from './pages/Profile/Profile.jsx';
+import Connections from './pages/Connections/Connections.jsx';
+import EditProfile from './pages/Profile/EditProfile/EditProfile.jsx';
+import Notifications from './pages/Notifications/Notifications.jsx';
 
 function App() {
 
@@ -51,13 +55,13 @@ function App() {
 
           <Route path="/search/posts" element={<SearchPost />} />
 
-          <Route path="/profile" element={<h1>Profile</h1>} />
+          <Route path="/profile" element={<Profile/>} />
 
-          <Route path="/profile/edit" element={<h1>Profile Edit</h1>} />
+          <Route path="/profile/edit" element={<EditProfile /> } />
 
-          <Route path="/connections" element={<h1>Connections</h1>} />
+          <Route path="/connections" element={<Connections />} />
 
-          <Route path="/notifications" element={<h1>Notifications</h1>} />
+          <Route path="/notifications" element={<Notifications />} />
 
           <Route path="/chat" element={<h1>Chat</h1>} />
 

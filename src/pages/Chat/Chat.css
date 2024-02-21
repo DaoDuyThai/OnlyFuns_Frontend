@@ -1,0 +1,15 @@
+.chatListContainer{
+    height: 85vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* align-items: center; */
+    overflow-y: auto;
+    border: solid 1px #e0e0e0;
+    border-radius: 5px;
+    overflow-y: auto;
+}
+.chatListContainer::-webkit-scrollbar {
+    width: 10px;
+}

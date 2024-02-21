@@ -1,0 +1,12 @@
+.listItem {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+.listItem:hover {
+    background-color: #f0f0f0;
+}
+.listItem.active {
+    border: solid 1px #c5c3c3;
+}

@@ -1,0 +1,55 @@
+.profileHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: solid 1px #e0e0e0;
+    margin-bottom: 20px;
+}
+.profileHeader .images {
+    height: 26.25rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+}
+.profileHeader .backgroundImage img {
+    width: 100%;
+    height: 20rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+}
+.profileHeader .avatar {
+    position: relative;
+    top: -60px;
+    right: -20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+.profileHeader .avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.profileHeader .profileUtils {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.profileHeader .profileUtils .profileName {
+    padding-left: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+.profileHeader .profileUtils .editProfile {
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+}
