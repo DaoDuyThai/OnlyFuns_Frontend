@@ -24,9 +24,9 @@ const Search = () => {
     };
 
     return (
-        <form className="d-flex input-group w-auto ms-lg-3 my-3 my-lg-0">
-
-            <input className='form-control'
+        <div className="d-flex input-group w-auto ms-lg-3 my-3 my-lg-0">
+            <input 
+                className='form-control'
                 type="search"
                 placeholder="Search..."
                 value={searchValue}
@@ -34,20 +34,11 @@ const Search = () => {
             />
             <button onClick={handleSearch} className='btn btn-primary'>
                 <div>
-                    <i className="fas fa-search fa-lg mb-1"></i>
+                    <FontAwesomeIcon icon={faSearch} />
                 </div>
             </button>
-        </form>
+        </div>
     );
 }
 
 export default Search;
-
-<form className="d-flex input-group w-auto ms-lg-3 my-3 my-lg-0">
-
-    <button className="btn btn-primary" type="button" data-mdb-ripple-color="dark">
-        <div>
-            <i className="fas fa-search fa-lg mb-1"></i>
-        </div>
-    </button>
-</form>

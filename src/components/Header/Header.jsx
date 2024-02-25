@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import './Header.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import OnlyFunsShortIcon from '../../assets/logo/OnlyFunsShortIcon.png';
 import OnlyFunsLongIcon from '../../assets/logo/OnlyFunsLongIcon.png';
 import Search from '../Search/Search';
@@ -13,6 +13,11 @@ import Search from '../Search/Search';
 * @des navbar/header for the entire website
 */
 const Header = () => {
+    const navigate = useNavigate()
+    const handleLogout = () => {   
+        localStorage.removeItem('accessToken');
+        navigate('/login')
+      };
     const [isCollapsed, setIsCollapsed] = useState(true);
 
 
@@ -248,7 +253,7 @@ const Header = () => {
                                                 <Dropdown.Item href="/">Settings</Dropdown.Item>
                                                 <Dropdown.Item href="/">Administration</Dropdown.Item>
                                                 <Dropdown.Divider />
-                                                <Dropdown.Item href="/"><center><button className='btn btn-danger'>Logout</button></center></Dropdown.Item>
+                                                <Dropdown.Item onClick={handleLogout}><center><button className='btn btn-danger'>Logout</button></center></Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
 
