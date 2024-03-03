@@ -3,7 +3,7 @@
 }
 
 .list-member-header {
-    height: 129px;
+    height: 4rem;
     box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.1);
     padding: 10px;
 }
@@ -32,4 +32,12 @@
 .search-bar input:focus {
     outline: none;
 
+}
+
+.btn.show-all-button {
+    width: 100%;
+    background-color: #e0dfdf3b; 
+    color: rgba(0, 0, 0, 0.633);
+    margin-bottom: 10px; 
+    font-weight: bold;
 }

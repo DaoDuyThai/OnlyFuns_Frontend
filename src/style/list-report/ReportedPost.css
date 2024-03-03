@@ -1,6 +1,5 @@
 .reported-post{
     box-shadow: 0 0 1px 1px rgba(0,0,0,0.1);
-    padding:20px;
     border-radius: 10px;
     width: 60%;
 }
@@ -42,4 +41,13 @@
 
 .rmv-btn:active {
     background-color: #6c6c6c;
+}
+.post-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.post-image img{
+    max-width: 100%;
+    max-height: 100%;
 }
