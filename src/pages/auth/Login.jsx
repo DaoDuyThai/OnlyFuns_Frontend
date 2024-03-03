@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import "./Login.css";
 import Logo from "/src/assets/logo/OnlyFunsShortIcon.png";
-import Logo1 from "/src/assets/logo/OnlyFunsLongIcon.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LongIconComponent from "../../components/LongIcon/LongIcon";
 import { toast } from "react-toastify";
+import axios from "../../setup/axios";
+// import axios from "axios";
 
 const Login = () => {
   const initialState = {
     username: "",
     password: "",
   };
+  const navigate = useNavigate()
 
   const [data, setData] = useState(initialState);
   const [confirmPass, setConfirmPass] = useState(true);
-
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -25,9 +26,12 @@ const Login = () => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
 
+ 
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
     if (!data.username || !data.username.trim()) {
       toast.warning('Hãy nhập username')
       return;
@@ -36,7 +40,21 @@ const Login = () => {
       toast.warning('Hãy nhập password')
       return;
     }
+    try {
+      const response = await axios.post('login', data);
+      console.log('Login success:', response.data);
+      
+      // Store the accessToken in localStorage
+      localStorage.setItem('accessToken', response.data.accessToken);
+      navigate('/')      
+      toast.success('Login successful!');
+    } catch (error) {
+      console.error('Login error:', error);
+      toast.error(error.response.data.message);
+    }
   };
+  
+  
 
   return (
     <div className="login">

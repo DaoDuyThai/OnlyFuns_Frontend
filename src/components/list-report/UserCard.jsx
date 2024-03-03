@@ -1,6 +1,7 @@
 import '../../style/list-report/UserCard.css';
 
-function UserCard() {
+function UserCard({user, time}) {
+    const timeFormat = new Date(time).toDateString()
     return (
         <div>
             <div className="user-card">
@@ -12,10 +13,10 @@ function UserCard() {
                     />
                     <div className="user-info me-2">
                         <div className="user-name">
-                            <a href="#"><strong>Dương Thiện Phước</strong></a>
+                            <a href="#"><strong>{user.username}</strong></a>
                         </div>
                         <div className="time">
-                            <p>June-25</p>
+                            <p>{timeFormat}</p>
                         </div>
                     </div>
                 </div>

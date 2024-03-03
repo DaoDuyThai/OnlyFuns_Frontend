@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./Login.css";
 import Logo from "../../assets/logo/OnlyFunsShortIcon.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LongIcon from "../../components/LongIcon/LongIcon";
 import { toast } from "react-toastify";
+import axios from "../../setup/axios";
 
 const Register = () => {
     const initialState = {
@@ -18,7 +19,7 @@ const Register = () => {
     const [validEmail, setValidEmail] = useState(true);
 
 
-
+   const  navigate = useNavigate()
     // handle Change in input
     const handleChange = (e) => {
         setData({ ...data, [e.target.name]: e.target.value });
@@ -35,7 +36,7 @@ const Register = () => {
     };
 
     // Form Submission
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (!data.username || !data.username.trim()) {
             toast.warning("Hãy nhập username");
@@ -61,6 +62,18 @@ const Register = () => {
         if (data.password !== data.confirmpass) {
             toast.warning("Password and confirm password must match.");
             return;
+        }
+        try {
+            const response = await axios.post('register', data);
+            if (response.status === 200) {
+                toast.success(response.data.message);
+                navigate('/login')
+            }else{
+                toast.error(response.data.message);
+            }
+        } catch (error) {
+            console.error('Login error:', error);
+            toast.error(error.response.data.message);   
         }
 
     };
