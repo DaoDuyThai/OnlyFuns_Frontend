@@ -26,6 +26,7 @@ function App() {
   useEffect(() => {
     setAccessToken(localStorage.getItem('accessToken'));
   }, []);
+  
 
   return (
     <>
@@ -47,9 +48,7 @@ function App() {
           * @author Đào Duy Thái
           * @date 14/02/2024
           */}
-          {accessToken && (
-            <Route path="/" element={<Home />} />
-          )}
+          {/* <Route path="/" element={accessToken ? <Home /> : <Navigate to="/login" replace />} /> */}
           <Route path="/" element={<Home />} />
 
           {/*
