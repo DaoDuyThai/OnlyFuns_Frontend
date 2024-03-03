@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import './FogotPassword.css'
 import LongIconComponent from "../../components/LongIcon/LongIcon";
 import { toast } from "react-toastify";
+import axios from "../../setup/axios";
 {/*
   * @des FogotPassword
   * @author Trinh Minh Phuc
@@ -22,7 +23,7 @@ const ForgotPassword = () => {
         return re.test(email);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         // Validate email format
@@ -35,7 +36,14 @@ const ForgotPassword = () => {
             toast.warn("Email không đúng định dạng");
             return;
         }
-        console.log("Email submitted for password reset:", email);
+        try {
+            const response = await axios.post('forgot', { email });
+            toast.success(response.data.message);
+            // console.log('Forgot success:', response.data);
+        } catch (error) {
+            toast.error(error.response.data.message);
+            console.log(error)
+        }
     };
 
     return (
