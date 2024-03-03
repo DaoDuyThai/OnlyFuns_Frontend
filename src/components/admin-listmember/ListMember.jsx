@@ -18,8 +18,8 @@ function ListMember() {
                             here.
                         </p>
                     </div>
-                    <div className="search-bar">
-                        <form>
+                    <div className="list-member-search-bar">
+                        <form className='w-100'>
                             <input type="text" placeholder="Find a member" />
                         </form>
                     </div>

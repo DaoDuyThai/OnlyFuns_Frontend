@@ -9,7 +9,7 @@
   
   .verification-icon {
     font-size: 4rem;
-    color: green;
+    /* color: green; */
   }
   
   .verification-text {
@@ -21,7 +21,8 @@
     margin-top: 2rem;
   }
   
-  .back-to-login a {
+  .back-to-login  {
+    font-size: 1.2rem;
     color: blue;
     text-decoration: none;
   }

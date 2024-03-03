@@ -7,7 +7,7 @@ ChartJS.register();
 function LineChart({ data, option }) {
     return (
         <div>
-            <Line data={data} options={option}/>
+            <Line data={data} options={option} />
         </div>
     );
 }

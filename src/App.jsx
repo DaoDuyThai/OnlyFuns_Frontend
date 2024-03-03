@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
 import Home from './pages/Home/Home';
 import Post from './pages/Post/Post';
@@ -18,8 +18,14 @@ import Connections from './pages/Connections/Connections.jsx';
 import EditProfile from './pages/Profile/EditProfile/EditProfile.jsx';
 import Notifications from './pages/Notifications/Notifications.jsx';
 import Chat from './pages/Chat/Chat.jsx';
+import { useEffect, useState } from "react";
 
 function App() {
+  const [accessToken, setAccessToken] = useState(localStorage.getItem('accessToken'));
+
+  useEffect(() => {
+    setAccessToken(localStorage.getItem('accessToken'));
+  }, []);
 
   return (
     <>
@@ -30,7 +36,7 @@ function App() {
 
           <Route path="/register" element={<Register />} />
 
-          <Route path="/verify" element={<Verify />} />
+          <Route path="/verify/*" element={<Verify />} />
 
           <Route path="/forgotpassword" element={<ForgotPassword />} />
 
@@ -41,6 +47,9 @@ function App() {
           * @author Đào Duy Thái
           * @date 14/02/2024
           */}
+          {accessToken && (
+            <Route path="/" element={<Home />} />
+          )}
           <Route path="/" element={<Home />} />
 
           {/*
@@ -56,9 +65,9 @@ function App() {
 
           <Route path="/search/posts" element={<SearchPost />} />
 
-          <Route path="/profile" element={<Profile/>} />
+          <Route path="/profile" element={<Profile />} />
 
-          <Route path="/profile/edit" element={<EditProfile /> } />
+          <Route path="/profile/edit" element={<EditProfile />} />
 
           <Route path="/connections" element={<Connections />} />
 
@@ -70,7 +79,7 @@ function App() {
 
           <Route path="/listreports" element={<h1>List Reports</h1>} />
 
-          <Route path="/dashboard" element={<DashBoard/>} />
+          <Route path="/dashboard" element={<DashBoard />} />
 
           <Route path="/listbanners" element={<h1>List Banners</h1>} />
 
