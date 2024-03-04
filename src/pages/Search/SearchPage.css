@@ -87,7 +87,7 @@
     margin-right: 10px;
 }
 
-.search-bar {
+.list-member-search-bar {
     display: flex;
     align-items: center;
     border-radius: 1rem;
@@ -98,7 +98,7 @@
 }
 
 
-.search-bar input[type="search"] {
+.list-member-search-bar input {
     width: 100%;
     padding: 8px;
     border: none;

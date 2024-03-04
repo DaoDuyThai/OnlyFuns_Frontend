@@ -2,12 +2,13 @@
     border-radius: 1.5rem;
     display: flex;
     flex-direction: column;
-    position: relative;
     gap: 1rem;
     overflow-x: hidden;
     background-color: #f8f9fa;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
     height: 50rem;
+    top: 0;
   }
   
   /* Profile Images */

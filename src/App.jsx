@@ -18,6 +18,9 @@ import Connections from './pages/Connections/Connections.jsx';
 import EditProfile from './pages/Profile/EditProfile/EditProfile.jsx';
 import Notifications from './pages/Notifications/Notifications.jsx';
 import Chat from './pages/Chat/Chat.jsx';
+
+import ListMember from './components/admin-listmember/ListMember.jsx';
+
 import { useEffect, useState } from "react";
 
 function App() {
@@ -27,7 +30,6 @@ function App() {
     setAccessToken(localStorage.getItem('accessToken'));
   }, []);
   
-
   return (
     <>
       <ToastContainer />
@@ -48,8 +50,8 @@ function App() {
           * @author Đào Duy Thái
           * @date 14/02/2024
           */}
-          {/* <Route path="/" element={accessToken ? <Home /> : <Navigate to="/login" replace />} /> */}
           <Route path="/" element={<Home />} />
+
 
           {/*
           * @des view post details of a social network
@@ -74,11 +76,11 @@ function App() {
 
           <Route path="/chat" element={<Chat />} />
 
-          <Route path="/listmembers" element={<h1>List Members</h1>} />
-
           <Route path="/listreports" element={<h1>List Reports</h1>} />
 
           <Route path="/dashboard" element={<DashBoard />} />
+
+          <Route path="/listmembers" element={<ListMember/>}  />
 
           <Route path="/listbanners" element={<h1>List Banners</h1>} />
 

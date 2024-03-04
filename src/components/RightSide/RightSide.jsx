@@ -25,7 +25,7 @@ const RightSide = () => {
                     Share
                 </button>
                 <ShareModal modalOpened={modalOpened} setModalOpened={setModalOpened} /> */}
-            {/*<RightSideBanner />*/}
+            <RightSideBanner />
             <HomeAdsBanner/>
         </div>
 
