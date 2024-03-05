@@ -40,7 +40,7 @@ function App() {
 
                     <Route path="/register" element={<Register />} />
 
-                    <Route path="/verify/*" element={<Verify />} />
+                    <Route path="/verify/:verificationCode" element={<Verify />} />
 
                     <Route
                         path="/forgotpassword"
