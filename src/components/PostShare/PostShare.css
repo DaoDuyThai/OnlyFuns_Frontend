@@ -1,4 +1,4 @@
-.PostShare{
+.PostShare {
     display: flex;
     gap: 1rem;
     background-color: #f8f9fa;
@@ -9,19 +9,20 @@
 }
 
 
-.PostShare>img{
+.PostShare>img {
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
 }
-.PostShare>div{
+
+.PostShare>div {
     display: flex;
     flex-direction: column;
     width: 90%;
     gap: 1rem;
 }
 
-.PostShare>div>input{
+.PostShare>div>input {
     background-color: white;
     border-radius: 10px;
     padding: 10px;
@@ -30,12 +31,12 @@
     outline: none;
 }
 
-.postOptions{
+.postOptions {
     display: flex;
     justify-content: space-around;
 }
 
-.option{
+.option {
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
@@ -46,32 +47,58 @@
     font-size: 12px;
 }
 
-.option:hover{
+.option:hover {
     cursor: pointer;
 }
-.ps-button{
+
+.ps-button {
     padding: 5px;
     padding-left: 20px;
     padding-right: 20px;
     font-size: 12px;
 }
 
+.previewImages {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow images to wrap to the next line if there's not enough space */
+    gap: 10px;
+    /* Adjust as needed to add space between images */
+}
 
-.previewImage{
+.previewImage {
     position: relative;
-    /* display: flex; */
+    /* Ensure the close button aligns properly */
 }
 
-.previewImage>svg{
-    position: absolute;
-    right: 1rem;
-    top: 0.5rem;
-    cursor: pointer;
+.previewImageContainer {
+    position: relative;
 }
 
-.previewImage>img{
-    width: 100%;
-    max-height: 20rem;
+.previewImage img {
+    max-width: 100px;
+    /* Adjust the width of the images as needed */
+    max-height: 100px;
+    /* Adjust the height of the images as needed */
     object-fit: cover;
-    border-radius: 0.5rem;
+    /* Ensure the aspect ratio is maintained */
+    border-radius: 5px;
+    /* Add rounded corners to the images */
+}
+
+.previewImage UilTimes {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Add background color to the close button */
+    border-radius: 50%;
+    /* Make the close button circular */
+    padding: 5px;
+}
+
+.previewImage svg {
+    cursor: pointer;
 }

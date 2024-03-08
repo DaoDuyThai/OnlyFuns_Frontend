@@ -1,23 +1,43 @@
-import { useRef } from "react";
-// import {useState} from "react";
-// import React from "react";
+/* eslint-disable no-unused-vars */
+import { useRef, useState } from "react";
 import "./PostShare.css";
 import { UilScenery } from "@iconscout/react-unicons";
 import { UilPlayCircle } from "@iconscout/react-unicons";
 import { UilLocationPoint } from "@iconscout/react-unicons";
 import { UilSchedule } from "@iconscout/react-unicons";
-// import { UilTimes } from "@iconscout/react-unicons";
-// import { useDispatch, useSelector } from "react-redux";
-// import { uploadImage, uploadPost } from "../../actions/UploadAction";
+import { UilTimes } from "@iconscout/react-unicons";
 
-/*
-* @author Đào Duy Thái
-* @date 14/02/2024
-* @des Input box for writing a new post and share them
-*/
 const PostShare = () => {
-
     const imageRef = useRef();
+    const [images, setImages] = useState([]);
+
+    const onImageChange = (e) => {
+        if (e.target.files && e.target.files.length > 0) {
+            let selectedImages = Array.from(e.target.files);
+            setImages([...images, ...selectedImages]);
+        }
+    };
+
+    const removeImage = (index) => {
+        const newImages = [...images];
+        newImages.splice(index, 1);
+        setImages(newImages);
+    };
+
+    const handleUpload = () => {
+        // Simulate uploading images here
+        images.forEach(image => {
+            // Do something with each image (e.g., upload to server)
+            console.log("Uploading image:", image);
+        });
+        // Reset the images state after upload
+        setImages([]);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Submitted!");
+    }
 
     return (
         <div className="PostShare">
@@ -29,7 +49,6 @@ const PostShare = () => {
                     type="text"
                     placeholder="What's happening?"
                     required
-                //   ref={desc}
                 />
                 <div className="postOptions">
                     <div
@@ -55,26 +74,26 @@ const PostShare = () => {
                     </div>
                     <button
                         className="btn btn-primary ps-button"
-                    // onClick={handleUpload}
-                    // disabled={loading}
-                    ><span style={{ fontWeight:"bold" }}>Share</span>
-                        
-                        {/* {loading ? "uploading" : "Share"} */}
+                        onClick={handleUpload}
+                    >
+                        <span style={{ fontWeight: "bold" }}>Share</span>
                     </button>
-
-                    <div style={{ display: "none" }}>
-                        {/* <input type="file" ref={imageRef} onChange={onImageChange} /> */}
-                    </div>
+                    <input type="file" ref={imageRef} onChange={onImageChange} style={{ display: "none" }} multiple />
                 </div>
 
-                {/* {image && (
-          <div className="previewImage">
-            <UilTimes onClick={() => setImage(null)} />
-            <img src={URL.createObjectURL(image)} alt="preview" />
-          </div>
-        )} */}
+                <div className="previewImages">
+                    {images.map((image, index) => (
+                        <div key={index} className="previewImage">
+                            <div className="previewImageContainer">
+                                <UilTimes onClick={() => removeImage(index)} />
+                                <img src={URL.createObjectURL(image)} alt={`preview-${index}`} />
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
-    )
-}
-export default PostShare
+    );
+};
+
+export default PostShare;
