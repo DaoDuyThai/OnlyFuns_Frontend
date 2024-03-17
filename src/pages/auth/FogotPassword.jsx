@@ -12,6 +12,7 @@ import axios from "../../setup/axios";
 const ForgotPassword = () => {
     const [email, setEmail] = useState("");
     const [validEmail, setValidEmail] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (e) => {
         setEmail(e.target.value);
@@ -25,15 +26,18 @@ const ForgotPassword = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
 
         // Validate email format
         if (!email || !email.trim()) {
             toast.warning("Hãy nhập email");
+            setLoading(false)
             return;
         }
         setValidEmail(validateEmail(email));
         if (!validEmail) {
             toast.warn("Email không đúng định dạng");
+            setLoading(false)
             return;
         }
         try {
@@ -43,6 +47,8 @@ const ForgotPassword = () => {
         } catch (error) {
             toast.error(error.response.data.message);
             console.log(error)
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -68,8 +74,15 @@ const ForgotPassword = () => {
                             />
                         </div>
                         <center>
-                            <button type="submit" className="btn btn-primary">
-                                Reset Password
+                            <button type="submit" className="btn btn-primary" disabled={loading}>
+                                {loading ? (
+                                    <div className="loading-content">
+                                        <div className="spinner"></div>
+                                        <span>Loading...</span>
+                                    </div>
+                                ) : (
+                                    'Reset Password'
+                                )}
                             </button>
                         </center>
 

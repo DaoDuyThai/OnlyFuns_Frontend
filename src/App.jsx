@@ -21,17 +21,14 @@ import Chat from './pages/Chat/Chat.jsx';
 
 import ListMember from './components/admin-listmember/ListMember.jsx';
 
-import { useEffect, useState } from 'react';
+
+
 
 function App() {
-    const [accessToken, setAccessToken] = useState(
-        localStorage.getItem('accessToken'),
-    );
-
-    useEffect(() => {
-        setAccessToken(localStorage.getItem('accessToken'));
-    }, []);
-
+    const isAuthenticated = () => {
+    const accessToken = localStorage.getItem('accessToken');
+    return accessToken !== null;
+};
     return (
         <>
             <ToastContainer />
@@ -41,7 +38,7 @@ function App() {
 
                     <Route path="/register" element={<Register />} />
 
-                    <Route path="/verify/*" element={<Verify />} />
+                    <Route path="/verify/:verificationCode" element={<Verify />} />
 
                     <Route
                         path="/forgotpassword"
@@ -55,7 +52,11 @@ function App() {
                      * @author Đào Duy Thái
                      * @date 14/02/2024
                      */}
-                    <Route path="/" element={<Home />} />
+                      <Route path="/" element={<Home />} />
+                    {/* <Route
+                        path="/"
+                        element={isAuthenticated() ? <Home /> : <Navigate to="/login"  />}
+                    /> */}
 
                     {/*
                      * @des view post details of a social network

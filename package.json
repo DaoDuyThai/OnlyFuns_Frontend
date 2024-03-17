@@ -23,6 +23,7 @@
     "cloudinary": "^2.0.3",
     "font-awesome": "^4.7.0",
     "json-server": "^1.0.0-alpha.23",
+    "jwt-decode": "^4.0.0",
     "prettier": "^3.2.5",
     "query-string": "^8.2.0",
     "react": "^18.2.0",

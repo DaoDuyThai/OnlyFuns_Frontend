@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import OnlyFunsShortIcon from '../../assets/logo/OnlyFunsShortIcon.png';
 import OnlyFunsLongIcon from '../../assets/logo/OnlyFunsLongIcon.png';
 import Search from '../Search/Search';
+import axios from '../../setup/axios';
 
 /*
 * @author Đào Duy Thái
@@ -14,10 +15,16 @@ import Search from '../Search/Search';
 */
 const Header = () => {
     const navigate = useNavigate()
-    const handleLogout = () => {   
-        localStorage.removeItem('accessToken');
-        navigate('/login')
-      };
+    const logoutUser = async () => {
+        try {
+            await axios.post('logout');
+            localStorage.removeItem('accessToken'); 
+            console.log('Logout successful');
+            navigate('/login');
+        } catch (error) {
+            console.error('Logout error:', error);
+        }
+    };
     const [isCollapsed, setIsCollapsed] = useState(true);
 
 
@@ -253,7 +260,7 @@ const Header = () => {
                                                 <Dropdown.Item href="/">Settings</Dropdown.Item>
                                                 <Dropdown.Item href="/">Administration</Dropdown.Item>
                                                 <Dropdown.Divider />
-                                                <Dropdown.Item onClick={handleLogout}><center><button className='btn btn-danger'>Logout</button></center></Dropdown.Item>
+                                                <Dropdown.Item onClick={logoutUser}><center><button className='btn btn-danger'>Logout</button></center></Dropdown.Item>
                                             </Dropdown.Menu>
                                         </Dropdown>
 

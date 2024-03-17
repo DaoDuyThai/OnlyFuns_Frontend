@@ -8,6 +8,7 @@ import axios from "../../setup/axios";
 
 const Register = () => {
     const initialState = {
+        fullName: "",
         email: "",
         username: "",
         password: "",
@@ -17,9 +18,10 @@ const Register = () => {
     const [data, setData] = useState(initialState);
     const [confirmPass, setConfirmPass] = useState(true);
     const [validEmail, setValidEmail] = useState(true);
+    const [loading, setLoading] = useState(false);
 
 
-   const  navigate = useNavigate()
+    const navigate = useNavigate()
     // handle Change in input
     const handleChange = (e) => {
         setData({ ...data, [e.target.name]: e.target.value });
@@ -38,29 +40,41 @@ const Register = () => {
     // Form Submission
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
+        if (!data.fullName || !data.fullName.trim()) {
+            toast.warning("Hãy điền đầy đủ họ tên");
+            setLoading(false);
+            return
+        }
         if (!data.username || !data.username.trim()) {
             toast.warning("Hãy nhập username");
+            setLoading(false);
             return;
         }
         if (!data.email || !data.email.trim()) {
             toast.warning("Hãy nhập email");
+            setLoading(false);
             return;
         }
         setValidEmail(validateEmail(data.email));
         if (!validEmail) {
             toast.warning("Email không đúng định dạng");
+            setLoading(false);
             return;
         }
         if (!data.password || !data.password.trim()) {
             toast.warning("Hãy nhập password.");
+            setLoading(false);
             return;
         }
         if (!data.confirmpass || !data.confirmpass.trim()) {
             toast.warning("Hãy nhập confirmpass.");
+            setLoading(false);
             return;
         }
         if (data.password !== data.confirmpass) {
             toast.warning("Password and confirm password must match.");
+            setLoading(false);
             return;
         }
         try {
@@ -68,12 +82,15 @@ const Register = () => {
             if (response.status === 200) {
                 toast.success(response.data.message);
                 navigate('/login')
-            }else{
+            } else {
                 toast.error(response.data.message);
+                setLoading(false);
             }
         } catch (error) {
             console.error('Login error:', error);
-            toast.error(error.response.data.message);   
+            toast.error(error.response.data.message);
+        } finally {
+            setLoading(false);
         }
 
     };
@@ -96,7 +113,18 @@ const Register = () => {
                         <h3>SignUp</h3>
                         <div>
                             <input
-                                
+
+                                type="text"
+                                placeholder="Full Name"
+                                className="infoInput"
+                                name="fullName"
+                                value={data.fullName}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div>
+                            <input
+
                                 type="text"
                                 placeholder="Username"
                                 className="infoInput"
@@ -107,7 +135,7 @@ const Register = () => {
                         </div>
                         <div>
                             <input
-                                
+
                                 type="text"
                                 placeholder="Email"
                                 className="infoInput"
@@ -118,7 +146,7 @@ const Register = () => {
                         </div>
                         <div>
                             <input
-                                
+
                                 type="password"
                                 className="infoInput"
                                 placeholder="Password"
@@ -129,7 +157,7 @@ const Register = () => {
                         </div>
                         <div>
                             <input
-                                
+
                                 type="password"
                                 className="infoInput"
                                 placeholder="Confirm Password"
@@ -140,9 +168,21 @@ const Register = () => {
                         </div>
                         {/* <p style={{ color: "red" }}>{!confirmPass && "Passwords do not match."}</p> */}
                         <p>Already have an account? <Link to="/login">Login</Link></p>
-                        <button className="button infoButton" type="submit">
-                            SignUp
-                        </button>
+                        <center>
+                            <button type="submit" className="btn btn-primary" disabled={loading}>
+                                {loading ? (
+                                    <div className="loading-content">
+                                        <div className="spinner"></div>
+                                        <span>Loading...</span>
+                                    </div>
+                                ) : (
+                                    'Signup'
+                                )}
+                            </button>
+                        </center>
+
+
+
                     </form>
                 </div>
             </div>
