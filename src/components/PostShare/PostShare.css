@@ -75,3 +75,6 @@
     object-fit: cover;
     border-radius: 0.5rem;
 }
+.btn-upload-img input[type="file"]{
+
+}

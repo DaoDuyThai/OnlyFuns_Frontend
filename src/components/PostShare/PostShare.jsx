@@ -1,68 +1,88 @@
-import { useRef } from "react";
-// import {useState} from "react";
-// import React from "react";
-import "./PostShare.css";
-import { UilScenery } from "@iconscout/react-unicons";
-import { UilPlayCircle } from "@iconscout/react-unicons";
-import { UilLocationPoint } from "@iconscout/react-unicons";
-import { UilSchedule } from "@iconscout/react-unicons";
-// import { UilTimes } from "@iconscout/react-unicons";
-// import { useDispatch, useSelector } from "react-redux";
-// import { uploadImage, uploadPost } from "../../actions/UploadAction";
+import { useRef, useState } from 'react';
+import './PostShare.css';
+import { UilScenery } from '@iconscout/react-unicons';
+import { UilPlayCircle } from '@iconscout/react-unicons';
+import { UilLocationPoint } from '@iconscout/react-unicons';
+import { UilSchedule } from '@iconscout/react-unicons';
 
 /*
-* @author Đào Duy Thái
-* @date 14/02/2024
-* @des Input box for writing a new post and share them
-*/
+ * @author Đào Duy Thái
+ * @date 14/02/2024
+ * @des Input box for writing a new post and share them
+ */
 const PostShare = () => {
+    const imageRef = useRef(null);
 
-    const imageRef = useRef();
+    const [content, setContent] = useState('');
+    const [images, setImages] = useState(null);
+
+    function handleUpload() {
+        const data = {
+            content,
+            images,
+        };
+        console.log(data);
+    }
 
     return (
         <div className="PostShare">
             <img
-                src="https://www.w3schools.com/w3images/avatar1.png" className="" alt="BackgroundPicture"
+                src="https://www.w3schools.com/w3images/avatar1.png"
+                className=""
+                alt="BackgroundPicture"
             />
             <div>
                 <input
                     type="text"
+                    value={content}
                     placeholder="What's happening?"
+                    onChange={(e) => setContent(e.target.value)}
                     required
-                //   ref={desc}
                 />
                 <div className="postOptions">
                     <div
                         className="option"
-                        style={{ color: "var(--photo)" }}
+                        style={{ color: 'var(--photo)' }}
                         onClick={() => imageRef.current.click()}
                     >
+                        <input
+                            type="file"
+                            ref={imageRef}
+                            accept="image/*"
+                            multiple
+                            style={{ display: 'none' }}
+                            onChange={(e) => setImages(e.target.files)}
+                        />
                         <UilScenery />
                         Photo
                     </div>
 
-                    <div className="option" style={{ color: "var(--video)" }}>
+                    <div className="option" style={{ color: 'var(--video)' }}>
                         <UilPlayCircle />
                         Video
                     </div>
-                    <div className="option" style={{ color: "var(--location)" }}>
+                    <div
+                        className="option"
+                        style={{ color: 'var(--location)' }}
+                    >
                         <UilLocationPoint />
                         Location
                     </div>
-                    <div className="option" style={{ color: "var(--shedule)" }}>
+                    <div className="option" style={{ color: 'var(--shedule)' }}>
                         <UilSchedule />
                         Shedule
                     </div>
                     <button
                         className="btn btn-primary ps-button"
-                    // onClick={handleUpload}
-                    // disabled={loading}
-                    ><span style={{ fontWeight:"bold" }}>Share</span>
-                        
+                        onClick={handleUpload}
+                        // disabled={loading}
+                    >
+                        <span style={{ fontWeight: 'bold' }}>Share</span>
+
                         {/* {loading ? "uploading" : "Share"} */}
                     </button>
 
-                    <div style={{ display: "none" }}>
+                    <div style={{ display: 'none' }}>
                         {/* <input type="file" ref={imageRef} onChange={onImageChange} /> */}
                     </div>
                 </div>
@@ -75,6 +95,6 @@ const PostShare = () => {
         )} */}
             </div>
         </div>
-    )
-}
-export default PostShare
+    );
+};
+export default PostShare;
