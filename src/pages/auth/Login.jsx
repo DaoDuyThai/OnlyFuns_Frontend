@@ -31,28 +31,29 @@ const Login = () => {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!data.username || !data.username.trim()) {
-      toast.warning('Hãy nhập username')
-      return;
+        toast.warning('Hãy nhập username')
+        return;
     }
     if (!data.password || !data.password.trim()) {
-      toast.warning('Hãy nhập password')
-      return;
+        toast.warning('Hãy nhập password')
+        return;
     }
     try {
-      const response = await axios.post('login', data);
-      console.log('Login success:', response.data);
-      
-      // Store the accessToken in localStorage
-      localStorage.setItem('accessToken', response.data.accessToken);
-      navigate('/')      
-      toast.success('Login successful!');
+        const response = await axios.post('login', data);
+        console.log('Login success:', response.data);
+        localStorage.setItem('accessToken', response.data.accessToken);
+        localStorage.setItem('UserId', response.data.info._id);
+        navigate('/')
+        toast.success('Login successful!');
     } catch (error) {
-      console.error('Login error:', error);
-      toast.error(error.response.data.message);
+        console.error('Login error:', error);
+        toast.error(error.response.data.message);
     }
-  };
+};
+
+
   
   
 
