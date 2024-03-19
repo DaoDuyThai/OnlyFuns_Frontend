@@ -1,12 +1,12 @@
 import './ActionBar.css';
 import { Link } from 'react-router-dom';
-const ActionBar = () => {
+const ActionBar = (user) => {
     return (
         <div className="actionBar">
             <nav>
                 <button>
                     <Link
-                        to="/profile"
+                        to={`/profile/${user.id}`}
                         style={{ textDecoration: 'none', color: 'inherit' }}
                     >
                         Timeline

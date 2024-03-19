@@ -1,5 +1,5 @@
 import "./ChatListItem.css";
-const ChatList = () => {
+const ChatListItem = () => {
     return (
         <div className="listItem d-flex flex-row w-auto">
             <div>
@@ -26,4 +26,4 @@ const ChatList = () => {
         </div>
     );
 };
-export default ChatList;
+export default ChatListItem;
