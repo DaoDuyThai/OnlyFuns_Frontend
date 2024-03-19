@@ -19,9 +19,6 @@ const ProfileHeader = ({ profile }) => {
             console.error('Error accessing chat:', error);
         }
     };
-    console.log(profile.userId === userId);
-    console.log(typeof profile.userId, typeof userId)
-    console.log(profile.userId, userId)
     return (
         <>
             <div className="row profileHeader">

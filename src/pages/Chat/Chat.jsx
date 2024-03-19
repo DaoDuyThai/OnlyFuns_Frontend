@@ -3,17 +3,12 @@ import Header from '../../components/Header/Header';
 import ChatListItem from '../../components/Chat/ChatList/ChatListItem';
 import ChatWindow from '../../components/Chat/ChatWindow/ChatWindow';
 import { socket } from '../../service/SocketIO';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import axios from 'axios';
-import { getAllMessageLists } from '../../service/ChatService';
+import ChatList from '../../components/Chat/ChatList';
 
 const Chat = () => {
-    const [messageList, setMessageList] = useState([]);
-
     useEffect(() => {
-        getAllMessageLists(() => {
-            setMessageList(messageList);
-        });
         // Retrieve the user ID from localStorage
         const userId = localStorage.getItem('UserId');
         // Ensure that the user ID is not null or undefined
@@ -31,38 +26,14 @@ const Chat = () => {
         }
     }, []);
 
-    const chatRoomID = 123; // Update this value as needed
-
-    const connectChat = (chatRoomID) => {
-        socket.emit('joinRoom', chatRoomID.toString());
-    };
-
-    const sendMessage = (message) => {
-        const userId = localStorage.getItem('UserId');
-        socket.emit('chatMessage', { chatRoomID, userId, message });
-    };
-
     return (
         <>
             <Header />
             <div className="container">
                 <div className="row pt-4">
-                    <div className="col-md-3 chatListContainer">
-                        <button
-                            onClick={() => connectChat(chatRoomID)}
-                            className="btn btn-primary"
-                        >
-                            Test connect room
-                        </button>
-                        <button
-                            onClick={() => sendMessage('Hello')}
-                            className="btn btn-success"
-                        >
-                            Test sending message
-                        </button>
-                        <ChatListItem />
-                        <ChatListItem />
-                    </div>
+                    <Suspense>
+                        <ChatList />
+                    </Suspense>
                     <div className="col-md-9">
                         <ChatWindow />
                     </div>
