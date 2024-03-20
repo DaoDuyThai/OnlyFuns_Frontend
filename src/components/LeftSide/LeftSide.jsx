@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 * @des left side of the home page
 */
 const LeftSide = () => {
-
+    const userId = localStorage.getItem('UserId');
     return (
         <div className="LeftSide">
             <div className="Profile">
@@ -62,7 +62,7 @@ const LeftSide = () => {
                 <span>
                     <center>
                         <button className='btn btn-primary'>
-                            <Link to="/profile" style={{ textDecoration: "none", color: "inherit" }}>
+                            <Link to={"/profile/"+userId} style={{ textDecoration: "none", color: "inherit" }}>
                                 My Profile
                             </Link>
                         </button>

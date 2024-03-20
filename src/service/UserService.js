@@ -48,10 +48,17 @@ async function getUsers(path) {
 async function getUser(id) {
     try {
         const response = await axios.get(`/user/${id}`);
-        return response.data
+        return response.data;
     } catch (e) {
         throw new Error(e);
     }
 }
-
-export { getUserLast7Days, getUsers,getUser };
+async function getProfile(id) {
+    try {
+        const response = await axios.get(`/profile/${id}`);
+        return response.data;
+    } catch (e) {
+        throw new Error(e);
+    }
+}
+export { getUserLast7Days, getUsers, getUser, getProfile };

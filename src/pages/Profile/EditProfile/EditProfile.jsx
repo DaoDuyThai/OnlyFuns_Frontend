@@ -1,6 +1,51 @@
 import './EditProfile.css';
+import { useState } from 'react';
 import Header from '../../../components/Header/Header';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 const EditProfile = () => {
+    const { userId } = useParams();
+    const [profileData, setProfileData] = useState({
+        profilePictureUrl: '',
+        backgroundPictureUrl: '',
+        bio: '',
+        city: '',
+        country: '',
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setProfileData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        // Send updated profile data to the backend
+        try {
+            const response = await axios.patch(
+                'http://localhost:9999/profile/' + userId,
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: profileData,
+                },
+            );
+            if (response.ok) {
+                // Handle success
+                console.log('Profile updated successfully');
+            } else {
+                // Handle error
+                console.error('Failed to update profile');
+            }
+        } catch (error) {
+            console.error('Error updating profile:', error);
+        }
+    };
+
     return (
         <>
             <Header />
@@ -12,16 +57,35 @@ const EditProfile = () => {
                         </span>
                         <div className="col-md-6 card">
                             <div className="card-body">
-                                <form action="">
+                                <form onSubmit={handleSubmit}>
                                     <div className="form-group">
-                                        <label htmlFor="fullName">
-                                            Full Name
+                                        <label htmlFor="profilePictureUrl">
+                                            Profile Picture URL
                                         </label>
                                         <input
                                             type="text"
                                             className="form-control"
-                                            id="name"
-                                            placeholder="Enter your full name"
+                                            id="profilePictureUrl"
+                                            name="profilePictureUrl"
+                                            value={
+                                                profileData.profilePictureUrl
+                                            }
+                                            onChange={handleChange}
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="backgroundPictureUrl">
+                                            Background Picture URL
+                                        </label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            id="backgroundPictureUrl"
+                                            name="backgroundPictureUrl"
+                                            value={
+                                                profileData.backgroundPictureUrl
+                                            }
+                                            onChange={handleChange}
                                         />
                                     </div>
                                     <div className="form-group">
@@ -29,34 +93,32 @@ const EditProfile = () => {
                                         <textarea
                                             className="form-control"
                                             id="bio"
+                                            name="bio"
                                             rows="3"
-                                            placeholder="Write something about yourself"
+                                            value={profileData.bio}
+                                            onChange={handleChange}
                                         ></textarea>
                                     </div>
                                     <div className="form-group">
-                                        <label
-                                            htmlFor="avatar"
-                                            className="mr-2"
-                                        >
-                                            Avatar
-                                        </label>
+                                        <label htmlFor="city">City</label>
                                         <input
-                                            type="file"
-                                            className="form-control-file avatar"
-                                            id="avatar"
-                                            placeholder="Upload your avatar
-                                "
+                                            type="text"
+                                            className="form-control"
+                                            id="city"
+                                            name="city"
+                                            value={profileData.city}
+                                            onChange={handleChange}
                                         />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="background">
-                                            Backgound Picture
-                                        </label>
+                                        <label htmlFor="country">Country</label>
                                         <input
-                                            type="file"
-                                            className="form-control-file"
-                                            id="background"
-                                            placeholder="Upload your background picture"
+                                            type="text"
+                                            className="form-control"
+                                            id="country"
+                                            name="country"
+                                            value={profileData.country}
+                                            onChange={handleChange}
                                         />
                                     </div>
                                     <button
@@ -74,4 +136,5 @@ const EditProfile = () => {
         </>
     );
 };
+
 export default EditProfile;

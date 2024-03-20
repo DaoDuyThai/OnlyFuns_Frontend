@@ -20,15 +20,14 @@ import Notifications from './pages/Notifications/Notifications.jsx';
 import Chat from './pages/Chat/Chat.jsx';
 
 import ListMember from './components/admin-listmember/ListMember.jsx';
-
-
-
+import { useEffect } from 'react';
+import { socket } from './service/SocketIO.js';
 
 function App() {
     const isAuthenticated = () => {
-    const accessToken = localStorage.getItem('accessToken');
-    return accessToken !== null;
-};
+        const accessToken = localStorage.getItem('accessToken');
+        return accessToken !== null;
+    };
     return (
         <>
             <ToastContainer />
@@ -38,7 +37,10 @@ function App() {
 
                     <Route path="/register" element={<Register />} />
 
-                    <Route path="/verify/:verificationCode" element={<Verify />} />
+                    <Route
+                        path="/verify/:verificationCode"
+                        element={<Verify />}
+                    />
 
                     <Route
                         path="/forgotpassword"
@@ -52,7 +54,7 @@ function App() {
                      * @author Đào Duy Thái
                      * @date 14/02/2024
                      */}
-                      <Route path="/" element={<Home />} />
+                    <Route path="/" element={<Home />} />
                     {/* <Route
                         path="/"
                         element={isAuthenticated() ? <Home /> : <Navigate to="/login"  />}
@@ -71,9 +73,12 @@ function App() {
 
                     <Route path="/search/posts" element={<SearchPost />} />
 
-                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/profile/:userId" element={<Profile />} />
 
-                    <Route path="/profile/edit" element={<EditProfile />} />
+                    <Route
+                        path="/profile/:userId/edit"
+                        element={<EditProfile />}
+                    />
 
                     <Route path="/connections" element={<Connections />} />
 

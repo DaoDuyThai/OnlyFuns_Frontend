@@ -1,7 +1,24 @@
 import './ProfileHeader.css';
 import ActionBar from './ActionBar/ActionBar';
-import { Link } from 'react-router-dom';
-const ProfileHeader = () => {
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
+const ProfileHeader = ({ profile }) => {
+    const navigate = useNavigate();
+    const userId = localStorage.getItem('UserId');
+    const accessChat = async () => {
+        try {
+            const res = await axios.post('http://localhost:9999/chat/create', {
+                participants: [profile.userId, userId], // Switched the order if needed
+            });
+
+            if (res.status === 200 || res.status === 201) {
+                navigate('/chat');
+            }
+        } catch (error) {
+            console.error('Error accessing chat:', error);
+        }
+    };
     return (
         <>
             <div className="row profileHeader">
@@ -20,14 +37,25 @@ const ProfileHeader = () => {
                     </div>
                 </div>
                 <div className="col-9 profileUtils">
-                    <div className="profileName">John Doe</div>
-                    <Link to={'edit'} className="btn btn-primary">
-                        Edit Profile
-                    </Link>
+                    <div className="profileName">{profile.fullName}</div>
+                    <div>
+                        {userId !== profile.userId && (
+                            <button
+                                className="btn btn-primary me-1"
+                                onClick={accessChat}
+                            >
+                                Chat
+                            </button>
+                        )}
+                        <Link to={'edit'} className="btn btn-primary">
+                            Edit Profile
+                        </Link>
+                    </div>
                 </div>
-                <ActionBar />
+                <ActionBar profile={profile} />
             </div>
         </>
     );
 };
+
 export default ProfileHeader;

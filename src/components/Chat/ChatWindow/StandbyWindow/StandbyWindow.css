@@ -1,0 +1,10 @@
+.standby-window {
+    display: flex;
+    flex-direction: column;
+    height: 85vh !important;
+    width: 100%;
+    border-radius: 10px;
+    border: solid 1px #e0e0e0;
+    align-items: center;
+    justify-content: center;
+}

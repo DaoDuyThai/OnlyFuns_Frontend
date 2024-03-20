@@ -10,3 +10,8 @@
 .listItem.active {
     border: solid 1px #c5c3c3;
 }
+.joined {
+    color: rgb(186, 72, 72);
+    font-weight: bold;
+    border: solid 1px #c5c3c3;
+}

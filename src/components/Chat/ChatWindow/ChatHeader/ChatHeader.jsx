@@ -1,4 +1,4 @@
-const ChatHeader = () => {
+const ChatHeader = ({selectedUser}) => {
     return (
         <div className="card-header chatHeader">
             <div className="d-flex flex-row">
@@ -13,7 +13,7 @@ const ChatHeader = () => {
                 </div>
                 <div className="ps-2">
                     <div>
-                        <span>John Doe</span>
+                        <span>{selectedUser.username}</span>
                     </div>
                     <span
                         style={{
