@@ -2,17 +2,20 @@ import './ChatListItem.css';
 import { socket } from '../../../service/SocketIO';
 import { useState } from 'react';
 
-const ChatListItem = ({ user, chatRoomID }) => {
+const ChatListItem = ({ user, chatRoomID, userSelection }) => {
     const [joined, setJoined] = useState(false);
+    const [activeChatId, setActiveChatId] = useState(null);
 
     const handleClick = () => {
         socket.emit('joinRoom', chatRoomID);
         setJoined(true);
+        setActiveChatId(chatRoomID);
+        userSelection(user, chatRoomID);
     };
 
     return (
         <div
-            className={`listItem d-flex flex-row w-auto ${joined ? 'joined' : ''}`}
+            className={`listItem d-flex flex-row w-auto ${joined && activeChatId === chatRoomID ? 'joined' : ''}`}
             onClick={handleClick}
         >
             <div>

@@ -1,13 +1,14 @@
 import './Chat.css';
 import Header from '../../components/Header/Header';
-import ChatListItem from '../../components/Chat/ChatList/ChatListItem';
 import ChatWindow from '../../components/Chat/ChatWindow/ChatWindow';
 import { socket } from '../../service/SocketIO';
 import { useEffect, useState, Suspense } from 'react';
-import axios from 'axios';
 import ChatList from '../../components/Chat/ChatList';
+import StandbyWindow from '../../components/Chat/ChatWindow/StandbyWindow/StandbyWindow';
 
 const Chat = () => {
+    const [user, setSelectedUser] = useState(null);
+    const [chatRoomID, setChatRoomID] = useState(null);
     useEffect(() => {
         // Retrieve the user ID from localStorage
         const userId = localStorage.getItem('UserId');
@@ -25,17 +26,28 @@ const Chat = () => {
             console.error('User ID not found in localStorage');
         }
     }, []);
+    const userSelection = (user, chatRoomID) => {
+        setSelectedUser(user);
+        setChatRoomID(chatRoomID);
+        console.log('Selected user:', user);
+    };
 
     return (
         <>
             <Header />
             <div className="container">
                 <div className="row pt-4">
-                    <Suspense>
-                        <ChatList />
-                    </Suspense>
+                    <ChatList userSelection={userSelection} />
+
                     <div className="col-md-9">
-                        <ChatWindow />
+                        {user ? (
+                            <ChatWindow
+                                selectedUser={user}
+                                chatRoomID={chatRoomID}
+                            />
+                        ) : (
+                            <StandbyWindow />
+                        )}
                     </div>
                 </div>
             </div>

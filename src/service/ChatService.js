@@ -9,5 +9,13 @@ const getAllMessageLists = async () => {
         console.error('Error fetching messages:', error);
     }
 };
+const getMessages = async (chatRoomID) => {
+    try {
+        const res = await axios.get(`http://localhost:9999/chat/${chatRoomID}`);
+        return res.data;
+    } catch (error) {
+        console.error('Error fetching messages:', error);
+    }
+};
 
-export { getAllMessageLists };
+export { getAllMessageLists, getMessages };
