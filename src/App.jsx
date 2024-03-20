@@ -20,6 +20,7 @@ import Notifications from './pages/Notifications/Notifications.jsx';
 import Chat from './pages/Chat/Chat.jsx';
 
 import ListMember from './components/admin-listmember/ListMember.jsx';
+import PostDetail from './components/PostDetail/PostDetail.jsx';
 
 
 
@@ -63,7 +64,7 @@ function App() {
                      * @author Đào Duy Thái
                      * @date 14/02/2024
                      */}
-                    <Route path="/post" element={<Post />} />
+                    <Route path="/post/:id" element={<Post />} />
 
                     <Route path="/search/*" element={<SearchPage />} />
 

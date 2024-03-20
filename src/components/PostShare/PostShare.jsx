@@ -4,24 +4,98 @@ import { UilScenery } from '@iconscout/react-unicons';
 import { UilPlayCircle } from '@iconscout/react-unicons';
 import { UilLocationPoint } from '@iconscout/react-unicons';
 import { UilSchedule } from '@iconscout/react-unicons';
+import uploadImage from '../../service/FireBase/Config.js';
+import { createPost } from '../../service/PostService.js';
+import { toast } from 'react-toastify';
 
 /*
  * @author Đào Duy Thái
  * @date 14/02/2024
  * @des Input box for writing a new post and share them
  */
+
+//Todo: Add AI model to detect content
 const PostShare = () => {
     const imageRef = useRef(null);
 
     const [content, setContent] = useState('');
-    const [images, setImages] = useState(null);
+    const [imagesFile, setImagesFile] = useState(null);
+    const [imagePreview, setImagePreview] = useState(null);
 
-    function handleUpload() {
-        const data = {
-            content,
-            images,
-        };
-        console.log(data);
+    function isImageFile(file) {
+        const imageTypes = [
+            'image/jpeg',
+            'image/png',
+            'image/gif',
+            'image/bmp',
+            'image/webp',
+            'image/tiff',
+            'image/jpg',
+        ];
+        return imageTypes.includes(file.type);
+    }
+
+    function handleUploadImage(e) {
+        const files = e.target.files;
+        const nonImageFile = [];
+        Array.from(files).forEach((file) => {
+            if (!isImageFile(file)) {
+                nonImageFile.push(file);
+            }
+        });
+        if (nonImageFile.length > 0) {
+            toast.error('Only image file is allowed');
+        } else {
+            setImagesFile(files);
+            const reader = new FileReader();
+            reader.onload = () => {
+                setImagePreview(reader.result);
+            }
+            reader.readAsDataURL(files[0]);
+        }
+    }
+
+    async function handleUpload() {
+        if (content !== '') {
+            const imageUrls = await uploadImageHandle(imagesFile);
+            const images = imagesFile ? imageUrls.map((url) => url) : [];
+            const UserId = localStorage.getItem('UserId');
+            const data = {
+                userId: UserId,
+                content: content,
+                image: images,
+            };
+            try {
+                const response = await createPost(
+                    '/post',
+                    JSON.stringify(data),
+                );
+                if (response.status === 'success') {
+                    toast.success('Post created successfully');
+                    setContent('');
+                    setImagesFile(null);
+                } else if (response.status === 'fail') {
+                    toast.error('Post creation failed');
+                    console.error(response.message);
+                    setContent('');
+                    setImagesFile(null);
+                    setImagePreview(null);
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        } else {
+            toast.error('Maybe you forgot to write something');
+        }
+    }
+
+    async function uploadImageHandle(image) {
+        try {
+            const images = Array.from(image).map((img) => uploadImage(img));
+            return await Promise.all(images);
+        } catch (e) {
+            console.error(e);
+        }
     }
 
     return (
@@ -39,6 +113,7 @@ const PostShare = () => {
                     onChange={(e) => setContent(e.target.value)}
                     required
                 />
+                {imagePreview && <img alt="preview" src={imagePreview} />}
                 <div className="postOptions">
                     <div
                         className="option"
@@ -51,7 +126,7 @@ const PostShare = () => {
                             accept="image/*"
                             multiple
                             style={{ display: 'none' }}
-                            onChange={(e) => setImages(e.target.files)}
+                            onChange={(e) => handleUploadImage(e)}
                         />
                         <UilScenery />
                         Photo
