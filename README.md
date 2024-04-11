@@ -1,20 +1,20 @@
 # OnlyFuns_Frontend
 
-This repository contains the frontend codebase for the OnlyFuns social media platform. The frontend is built using React with Vite, providing a minimal setup with HMR (Hot Module Replacement) and some ESLint rules. This repository works best when combined with OnlyFuns_Backend repository.
+This repository contains the frontend codebase for the OnlyFuns social media platform. The frontend is built using React with Vite, providing a minimal setup with HMR (Hot Module Replacement) and some ESLint rules.
 
 ## Technologies Used
 
 - **React:** JavaScript library for building user interfaces.
 - **Vite:** Next-generation frontend tooling, providing a fast development server and build pipeline.
 - **ESLint:** JavaScript linting utility for maintaining code quality.
-- **Other dependencies:** [List other major dependencies or libraries used]
+- **Other dependencies:** @emotion, axios, bootstrap, chart.js, cloudinary, firebase, jwt-decode, query-string, uuid
 
 ## Setup
 
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/yourusername/OnlyFuns_Frontend.git
+git clone https://github.com/DuyThaiddt/OnlyFuns_Frontend
 ```
 2. **Install dependencies:**
 ```bash
@@ -36,3 +36,6 @@ npm run dev
 - src/App.jsx: Main component file where routing and Redux store configuration are set up.
 ## Contribution
 Contributions are welcome! Please follow the contribution guidelines.
+
+## License
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/)
