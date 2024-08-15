@@ -14,7 +14,7 @@ This repository contains the frontend codebase for the OnlyFuns social media pla
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/DuyThaiddt/OnlyFuns_Frontend
+git clone https://github.com/DaoDuyThai/OnlyFuns_Frontend
 ```
 2. **Install dependencies:**
 ```bash
